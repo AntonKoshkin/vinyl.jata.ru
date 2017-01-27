@@ -1,0 +1,37 @@
+include ../../blocks/template/links
+
+-nav = []
+-nav.push(['#service', 'Услуги'])
+-nav.push(['#price', 'Цены'])
+-nav.push(['#gallery', 'Галерея'])
+-nav.push(['#contacts', 'Контакты'])
+
+header.header
+	.header__lines
+		.header__line.header__line--black
+		.header__line.header__line--red
+			.header__line-inner
+	.header__content
+		.header__side.header__side--red
+			.header__logo
+
+		.header__side.header__side--black
+			nav.nav.nav--hidden#nav
+				ul.nav__list
+					for item in nav
+						li.nav__item
+							a.nav__link(href=item[0])=item[1]
+
+
+			a.phone(href='tel:'+ phone.call)
+				svg.phone__red-phone(
+					data-name='red-phone'
+					xmlns='http://www.w3.org/2000/svg'
+					viewBox='0 0 15.5 15.5')
+					path(
+						d='M4.65,0H4.36a4.29,4.29,0,0,0-3,1.26h0A4.53,4.53,0,0,0,0,4.46H0A4.53,4.53,0,0,0,.62,6.74a22.62,22.62,0,0,0,8.14,8.14,4.53,4.53,0,0,0,5.48-.71h0a4.29,4.29,0,0,0,1.26-3V10.85L11.37,9.3,9.82,10.85A18.63,18.63,0,0,1,4.65,5.68L6.2,4.13Z'
+						style='fill:#cb2223')
+				span.phone__text=phone.read
+
+			button.burger#burger(type='button')
+				span.burger__strip

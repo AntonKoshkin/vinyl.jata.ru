@@ -1,0 +1,16 @@
+icon(name, path)
+	${name}
+		background-image url(path)
+
+svg(name, path)
+	${name}
+		background-image url('data:image/svg+xml;utf8,' + path)
+
+bicon(icon, icon_size = 0, bg_size = icon_size)
+	@extend ${icon}, $bg-one
+	
+	
+	if icon_size != 0
+		background-size (icon_size)px (icon_size)px
+		width (bg_size)px
+		height @width

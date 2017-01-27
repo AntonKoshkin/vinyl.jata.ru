@@ -1,0 +1,35 @@
+.burger
+	@extend $btn-reset
+	size 38px
+	
+	position relative
+	margin-left 24px
+	
+	&__strip
+		left 50%
+		top 50%
+		transform translate(-50%, -50%)
+		
+		&
+		&:before
+		&:after
+			position absolute
+			width 32px
+			height 4px
+			border-radius 2px
+			background-color white
+		
+		&:before
+		&:after
+			@extend $pseudo
+			
+			left 0
+		
+		&:before
+			top 8px
+		
+		&:after
+			bottom 8px
+	
+	@media (min-width tablet)
+		display none

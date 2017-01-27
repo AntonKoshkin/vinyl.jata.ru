@@ -1,0 +1,122 @@
+header-black	= #151716
+header-red		= #a8393b
+
+red-line-shadow-black = #000105
+
+widthCoef = {
+	sm: 20px,
+	md: 135px,
+	lg: 230px,
+}
+
+rl-width(coef)
+	min-width 'calc(50% - %s)' % coef
+
+bl-width(coef)
+	min-width 'calc(80% + %s)' % coef
+
+sm-red-line-width = calc(50% - 20px)
+sm-black-line-width = calc(80% + 20px)
+md-red-line-width = calc(50% - 135px)
+md-balck-line-width = calc(80% + 135px)
+lg-red-line-width = calc(50% - 265px)
+lg-balck-line-width = calc(80% + 265px)
+
+red-side-width = 40%
+
+.header
+	position relative
+	
+	&__lines
+		position absolute
+		width 100%
+		height 100%
+		top 0
+		left 0
+	
+	&__line
+		height 100%
+		position absolute
+		top 0
+		transform skewX(-45deg)
+		overflow hidden
+		box-shadow 5px 5px 20px rgba(red-line-shadow-black, .8)
+		transform-origin left top
+		
+		&--red
+			rl-width(widthCoef.sm)
+			
+			left 0
+			background-color header-red
+		
+		&--black
+			bl-width(widthCoef.sm)
+
+			right -30%
+			background-color header-black
+
+	&__line-inner
+		position absolute
+		top 0
+		left 0
+		height 100%
+		width 130%
+		min-width 250px
+		background-image url(/img/pattern--red.jpg)
+		transform skewX(45deg)
+		transform-origin left bottom
+		opacity .9
+		background-repeat repeat
+		background-position 130% 20%
+	
+	&__content
+		position relative
+		max-width mobile-width
+		margin-left auto
+		margin-right auto
+		display flex
+		justify-content space-between
+		align-items center
+		min-height 60px
+	
+	&__side
+		display flex
+
+		&--red
+			width red-side-width
+			align-self stretch
+
+	&__logo
+		width 150px
+		align-self stretch
+		background-image url(/img/header__logo.png)
+		background-repeat no-repeat
+		background-position center
+		background-size contain
+	
+	@media (min-width tablet)
+		&__line
+			&--red
+				rl-width(widthCoef.md)
+			
+			&--black
+				bl-width(widthCoef.md)
+		
+		&__content
+			max-width tablet-width
+			min-height 70px
+	
+	@media (min-width desktop)
+		&__line
+			&--red
+				rl-width(widthCoef.lg)
+
+			&--black
+				bl-width(widthCoef.lg)
+
+		&__content
+			max-width desktop-width
+		
+		&__logo
+			width 260px
+		

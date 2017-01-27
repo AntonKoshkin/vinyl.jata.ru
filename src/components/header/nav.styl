@@ -1,0 +1,62 @@
+nav-bg = #34
+nav-border = #3a
+
+.nav
+	position absolute
+	top 55px
+	right 8px
+	
+	&--hidden
+		display none
+	
+	&__list
+		width 450px
+		background-color nav-bg
+		border-radius 4px
+		padding 9px 15px
+		list-style-type none
+		display flex
+		flex-direction column
+		align-items stretch
+		
+	&__item
+		& + &
+			border-top 1px solid #3a
+	
+	&__link
+		color white
+		font-weight 300
+		text-transform uppercase
+		display block
+		text-align center
+		padding 14px 14px 15px
+	
+	@media (min-width tablet)
+		flex-grow 1
+		position static
+		top auto
+		right auto
+		align-items center
+		margin-right 10px
+		display flex
+		
+		&--hidden
+			display flex
+		
+		&__list
+			flex-direction row
+			align-items center
+			justify-content center
+			background none
+			padding 0
+			width auto
+			border-radius 0
+		
+		&__item
+			& + &
+				border-top none
+			
+		&__link
+			font-size round(14rem / 16, 2)
+			padding-top 5px
+			padding-bottom 6px

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+html(lang='ru')
+	head
+		include ./blocks/template/head
+	body.vynil
+		include ./components/header/header
+
+		//- загружаем жЫквери с цдн
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js')
+		//- если не загружается, то подтягиваем свой
+		script.
+			window.jQuery || document.write('<script src=\'js/jquery.min.js\'><\/script>')
+
+		//- свои скрипты
+		script(src='js/main.js')

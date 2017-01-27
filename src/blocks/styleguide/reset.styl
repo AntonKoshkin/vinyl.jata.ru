@@ -1,0 +1,52 @@
+h1
+h2
+h3
+h4
+	margin 0
+
+p
+	margin 0
+
+ul
+	margin 0
+	padding 0
+
+a
+	text-decoration none
+	color inherit
+
+address
+	font-style normal
+
+blockquote
+	margin 0
+
+*
+*:before
+*:after
+	box-sizing border-box
+	// never do like this
+	outline none
+
+input
+textarea
+	&::-ms-clear
+		display none
+
+input[type=number]
+	&::-webkit-inner-spin-button
+	&::-webkit-outer-spin-button
+		-webkit-appearance none
+		-moz-appearance none
+		appearance none
+		margin 0
+
+$btn-reset
+	padding 0
+	border none
+	background none
+
+$textarea-reset
+	padding 0
+	border none
+	background none
