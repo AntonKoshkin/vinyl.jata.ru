@@ -1,0 +1,95 @@
+.promo
+	background-image url('/img/promo__bg.png')
+	background-position 50% 100%
+	background-repeat no-repeat
+	background-size 200%
+	position relative
+
+	&__content
+		container()
+		
+		padding-top 50px
+		padding-bottom calc(17vw + 1px)
+		display flex
+		flex-direction column
+		justify-content flex-end
+	
+	&__title
+		display flex
+		flex-direction column
+		position relative
+		top 5px
+	
+	&__text
+		color white
+		text-shadow 2px 2px 1px rgba(black, .5)
+		
+		&--small
+			font-size (26rem / 16)
+			font-weight 500
+			display flex
+			align-items center
+			margin-left 4px
+			text-transform lowercase
+			
+			&:before
+			&:after
+				content ''
+				width 4px
+				height 25px
+				background-color blue
+			
+			&:before
+				margin-right 10px
+			
+			&:after
+				margin-left 10px
+			
+			span
+				position relative
+				top -2px
+		
+		&--big
+			font-size (40rem / 16)
+			font-weight 900
+			text-transform uppercase
+	
+	&__car
+		// width 480px
+		// height 160px
+		width 100%
+		background-image url('/img/promo__car.png')
+		background-position center
+		background-size contain
+		background-repeat no-repeat
+		position relative
+		
+		&:before
+			content ''
+			padding-bottom 33%
+			float left
+	
+	@media (min-width tablet)
+		&__text
+			&--small
+				font-size (30rem / 16)
+				margin-bottom 5px
+				
+				&:before
+					margin-right 20px
+				
+				&:after
+					margin-left 20px
+			
+			&--big
+				font-size (55rem / 16)
+	
+	@media (min-width desktop)
+		&__title
+			margin-left 60px
+			margin-bottom -35px
+			
+		&__car
+			width 1090px
+			margin-right auto
+			margin-left auto

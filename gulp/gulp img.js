@@ -25,8 +25,8 @@ module.exports = function() {
 				}],
 				use: [
 					pngQuant({
-						quality: '65-80',
-						speed  : 6,
+						quality: '80-90',
+						speed  : 5,
 						verbose: true,
 					})
 				],

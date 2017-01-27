@@ -9,7 +9,6 @@ const notify	= require('gulp-notify');
 const plumber	= require('gulp-plumber');
 const rev		= require('gulp-rev');
 const server	= require('browser-sync');
-const st			= require('stylus');
 const stylus	= require('gulp-stylus');
 
 	// postCSS and it's plagins
