@@ -14,3 +14,14 @@ slow(prop)
 size(x)
 	width x
 	height @width
+
+container()
+	max-width mobile-width
+	margin-left auto
+	margin-right auto
+	
+	@media (min-width tablet)
+		max-width tablet-width
+	
+	@media (min-width desktop)
+		max-width desktop-width

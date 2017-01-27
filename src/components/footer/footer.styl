@@ -1,0 +1,43 @@
+bg-grad-dark = #67
+bg-grad-light = #bf
+
+footer-text-color = #fe
+
+.footer
+	background linear-gradient(45deg,
+		#67 0%,
+		#bf 100%)
+
+	&__content
+		container()
+		
+		min-height 160px
+		display flex
+		justify-content space-between
+		align-items flex-end
+		padding 45px 0
+		
+	&__left
+		display flex
+		flex-direction column
+	
+	&__logo
+		width 244px
+		height 36px
+		background-image url('/img/footer__logo.png')
+		background-position center
+		background-repeat no-repeat
+		background-size contain
+		margin-bottom 10px
+	
+	&__address
+		display flex
+		align-items center
+
+	&__pointer
+		size 18px
+		margin-right 5px
+	
+	&__text
+		color footer-text-color
+		text-shadow 2px 2px 2px rgba(black, .6)

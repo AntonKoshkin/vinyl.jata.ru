@@ -1,0 +1,44 @@
+phone-text-white = #fe
+phone-text-black = #31
+
+phone-bg-gray = #2d2f2e
+
+.phone
+	min-height 38px
+	display none
+	align-items center
+	justify-content space-between
+	border-radius 8px
+	
+	.header &
+		background-color phone-bg-gray
+		padding-right 12px
+		padding-left 12px
+		min-width 164px
+	
+	.footer &
+		min-width 140px
+
+	&__icon
+		size 13px
+		margin-right 5px
+	
+	&__path
+		.header &
+			fill red
+		
+		.footer &
+			fill blue
+	
+	&__text
+		font-size 1rem
+		
+		.header &
+			color phone-text-white
+		
+		.footer &
+			color phone-text-black
+			font-weight 500
+	
+	@media (min-width desktop)
+		display flex

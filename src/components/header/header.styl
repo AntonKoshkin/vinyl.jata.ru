@@ -70,10 +70,9 @@ red-side-width = 40%
 		background-position 130% 20%
 	
 	&__content
+		container()
+
 		position relative
-		max-width mobile-width
-		margin-left auto
-		margin-right auto
 		display flex
 		justify-content space-between
 		align-items center
@@ -103,7 +102,6 @@ red-side-width = 40%
 				bl-width(widthCoef.md)
 		
 		&__content
-			max-width tablet-width
 			min-height 70px
 	
 	@media (min-width desktop)
@@ -113,9 +111,6 @@ red-side-width = 40%
 
 			&--black
 				bl-width(widthCoef.lg)
-
-		&__content
-			max-width desktop-width
 		
 		&__logo
 			width 260px
