@@ -431,6 +431,14 @@ body {
   .header__logo {
     width: 260px;
   }
+  .header__side--red {
+    width: 30%;
+  }
+  .header__side--black {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+  }
 }
 .nav {
   position: absolute;
@@ -512,6 +520,18 @@ body {
     font-size: 0.88rem;
     padding-top: 5px;
     padding-bottom: 6px;
+  }
+}
+@media (min-width: 1180px) {
+  .nav {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+  }
+  .nav__list {
+    width: 100%;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
   }
 }
 .phone {
