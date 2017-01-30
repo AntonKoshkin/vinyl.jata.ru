@@ -1,0 +1,7 @@
+mixin title(num, color)
+	.title(class='title--' + color)&attributes(attributes)
+		.title__bg
+			.title__inner
+		#{'h' + num}.title__text
+			if block
+				block

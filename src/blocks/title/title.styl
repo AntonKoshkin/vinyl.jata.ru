@@ -1,0 +1,72 @@
+title-red-bg = #c42c30
+
+.title
+	position relative
+	
+	&--desktop-vis
+		display none
+	
+	& + &
+		margin-top 4px
+	
+	&__bg
+	&__inner
+		position absolute
+		height 100%
+
+	&__bg
+		top 50%
+		left 50%
+		transform skewX(-10deg) translate(-50%, -50%)
+		transform-origin center center
+		overflow hidden
+		width calc(100% + 10px)
+		margin-left -2px
+		box-shadow 5px 5px 20px rgba(black, .8)
+		
+		.title--red &
+			background-color title-red-bg
+		
+		.title--blue &
+			background-color blue
+	
+	&__inner
+		bottom 0
+		left 0
+		width 110%
+		transform skewX(10deg)
+		transform-origin left bottom
+		background-repeat repeat
+		opacity .8
+		
+		.title--red &
+			background-image url('/img/pattern--red.jpg')
+			background-position 60% -40%
+
+		.title--blue &
+			background-image url('/img/pattern--blue.jpg')
+	
+	&__text
+		color white
+		font-size (18rem / 16)
+		text-transform uppercase
+		font-weight 900
+		font-style italic
+		position relative
+	
+	@media (min-width desktop)
+		padding-top 4px
+		padding-bottom 4px
+		padding-left 3px
+		
+		&--desktop-vis
+			display block
+		
+		&--desktop-invis
+			display none
+		
+		& + &
+			margin-top 6px
+
+		&__text
+			font-size (22rem / 16)

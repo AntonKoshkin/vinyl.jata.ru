@@ -1,0 +1,53 @@
+include ../../blocks/section/section
+include ../../blocks/title/title
+
+-firstPrices = []
+-firstPrices.push(['Авто 1 класса', '6 000'])
+-firstPrices.push(['Авто бизнес-класса', '26 000'])
+-firstPrices.push(['Авто 1 класса', '6 000'])
+-firstPrices.push(['Авто бизнес-класса', '26 000'])
+
+-secondPrices = []
+-secondPrices.push(['Авто 1 класса', '6 000'])
+-secondPrices.push(['Авто бизнес-класса', '26 000'])
+-secondPrices.push(['Авто 1 класса', '6 000'])
+-secondPrices.push(['Авто бизнес-класса', '26 000'])
+
+-thirdPrices = []
+-thirdPrices.push(['Авто 1 класса', '6 000'])
+-thirdPrices.push(['Авто бизнес-класса', '26 000'])
+-thirdPrices.push(['Авто 1 класса', '6 000'])
+-thirdPrices.push(['Авто бизнес-класса', '26 000'])
+
+-fourthPrices = []
+-fourthPrices.push(['Авто 1 класса', '6 000'])
+-fourthPrices.push(['Авто бизнес-класса', '26 000'])
+-fourthPrices.push(['Авто 1 класса', '6 000'])
+-fourthPrices.push(['Авто бизнес-класса', '26 000'])
+
+-fifthPrices = []
+-fifthPrices.push(['Авто 1 класса', '6 000'])
+-fifthPrices.push(['Авто бизнес-класса', '26 000'])
+-fifthPrices.push(['Авто 1 класса', '6 000'])
+-fifthPrices.push(['Авто бизнес-класса', '26 000'])
+
+.sections
+	+section('antigrav', firstPrices)
+		+title(3, 'red')(class='section__title')
+			| Антигравийная 
+			b пленка
+		.section__emptiness
+		+title(3, 'red')(class='section__text')
+			| Защита Вашего авто
+		+title(3, 'red')(class='section__text')
+			| от сколов и мелких царапин!
+
+	+section('branding', secondPrices)
+		+title(3, 'blue')(class='section__title')
+			b Брендирование
+			|  авто
+		.section__emptiness
+		+title(3, 'blue')(class='section__text')
+			| Брендирование автомобилей
+		+title(3, 'blue')(class='section__text')
+			| виниловой пленкой

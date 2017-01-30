@@ -1,0 +1,39 @@
+include ../../blocks/title/title
+
+mixin feature(num)
+	.feature(class='reature--' + num)
+		.feature__shadow
+		img.feature__img(src='/img/feature__item--' + num + '.png')
+		.feature__titles
+			if block
+				block
+
+section.features
+	.features__content
+		+feature(1)
+			+title(3, 'red')(class='title--desktop-invis')
+				| Опыт
+			+title(3, 'red')(class='title--desktop-invis')
+				| сотрудников
+			+title(3, 'red')(class='title--desktop-vis')
+				| Опыт сотрудников
+			+title(3, 'red')
+				| более 5 лет
+
+		+feature(2)
+			+title(3, 'blue')
+				| Качественная
+			+title(3, 'blue')
+				| пленка
+
+		+feature(3)
+			+title(3, 'red')
+				| Гарантия
+			+title(3, 'red')
+				| работ
+
+		+feature(4)
+			+title(3, 'blue')
+				| Современное
+			+title(3, 'blue')
+				| оборудование

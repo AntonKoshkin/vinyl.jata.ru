@@ -1,0 +1,27 @@
+mixin section(name, prices)
+	section.section(class='section--' + name)
+		.section__body
+			.section__content
+				.section__face
+					img.section__img.section__img--mobile(src='/img/section__img--' + name + '-mobile.png')
+					img.section__img.section__img--tablet(src='/img/section__img--' + name + '-tablet.png')
+					img.section__img.section__img--desktop(src='/img/section__img--' + name + '-desktop.png')
+					.section__titles
+						if block
+							block
+				.section__btn-wrapper
+					button.section__btn(type='button') Получить скидку
+		.section__footer
+			.section__lines
+				.section__line.section__line--colored
+				.section__line.section__line--black
+			.section__content
+				h3.section__foot-title Стоимость
+				.section__prices
+					for price in prices
+						p.section__price
+							=price[0]
+							br
+							| от 
+							b=price[1]
+							|  руб.
