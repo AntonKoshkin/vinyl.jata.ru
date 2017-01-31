@@ -363,12 +363,24 @@ btn-face-blue = #228dcb
 			&--colored
 				width calc(50% - 347px)
 				background-color red
-				left 0
+				
+				.section:nth-child(odd) &
+					left 0
+				
+				.section:nth-child(even) &
+					background-color blue
+					right 0
 			
 			&--black
 				width calc(50% + 347px)
-				right 0
 				background-color black
+				
+				.section:nth-child(odd) &
+					right 0
+				
+				.section:nth-child(even) &
+					left 0
+				
 		
 		&__foot-title
 			display flex
@@ -379,9 +391,17 @@ btn-face-blue = #228dcb
 			font-size (28rem / 16)
 			font-weight 700
 			font-style italic
+			
+			.section:nth-child(even) &
+				order 2
+				justify-content flex-end
 		
 		&__prices
 			flex-grow 1
+			
+			.section:nth-child(even) &
+				order 1
 		
 		&__price
 			font-size (18rem / 16)
+				
