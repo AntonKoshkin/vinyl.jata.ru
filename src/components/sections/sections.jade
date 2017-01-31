@@ -47,7 +47,39 @@ include ../../blocks/title/title
 			b Брендирование
 			|  авто
 		.section__emptiness
-		+title(3, 'blue')(class='section__text')
-			| Брендирование автомобилей
-		+title(3, 'blue')(class='section__text')
-			| виниловой пленкой
+		.section__text-wrapper
+			+title(3, 'blue')(class='section__text')
+				| Брендирование автомобилей
+			+title(3, 'blue')(class='section__text')
+				| виниловой пленкой
+
+	+section('full', secondPrices)
+		+title(3, 'red')(class='section__title')
+			b Полная оклейка
+			|  авто
+		.section__emptiness
+		+title(3, 'red')(class='section__text')
+			| Преображение внешнего вида
+		+title(3, 'red')(class='section__text')
+			| Вашего автомобиля
+
+	+section('vynil', secondPrices)
+		+title(3, 'blue')(class='section__title')
+			b Винилография
+		.section__emptiness
+		.section__text-wrapper
+			+title(3, 'blue')(class='section__text')
+				| Практичная и недорогая
+			+title(3, 'blue')(class='section__text')
+				| замена аэрографии
+
+	+section('part', secondPrices)
+		+title(3, 'red')(class='section__title')
+			b Частичная оклейка
+			|  авто
+		.section__emptiness
+		.section__text-wrapper
+			+title(3, 'red')(class='section__text')
+				| Рекламные надписи
+			+title(3, 'red')(class='section__text')
+				| Наклейки

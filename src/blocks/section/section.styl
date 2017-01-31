@@ -1,16 +1,29 @@
 btn-red = #4a0c0c
+btn-blue = #0d3248
+btn-face-blue = #228dcb
 
 .section
 	background-size cover
 	background-position 35% 0
 	background-repeat no-repeat
 	box-shadow 0 8px 13px rgba(black, .6)
+	position relative
 	
 	&--antigrav
 		background-image url(/img/section__bg--antigrav.jpg)
 	
 	&--branding
 		background-image url(/img/section__bg--branding.jpg)
+	
+	&--full
+		background-image url(/img/section__bg--full.jpg)
+	
+	&--vynil
+		background-image url(/img/section__bg--vynil.jpg)
+		background-position center
+	
+	&--part
+		background-image url(/img/section__bg--part.jpg)
 	
 	&__content
 		container()
@@ -24,6 +37,16 @@ btn-red = #4a0c0c
 		padding-bottom 43px
 		position relative
 		margin-bottom 22px
+		
+		.section--branding &
+			padding-top 22px
+			margin-bottom 12px
+		
+		.section--vynil &
+			padding-top 22px
+		
+		.section--full
+			padding-top 15px
 
 	&__img
 		width 100%
@@ -42,21 +65,30 @@ btn-red = #4a0c0c
 		display flex
 		flex-direction column
 		align-items flex-start
+		
+		.section--branding &
+			height 96%
+		
+		.section--vynil &
+			width 75%
+			height 79%
 	
 	&__emptiness
 		flex-grow 1
 	
 	&__title
 		padding-left 2px
+		padding-top 1px
+		padding-bottom 1px
 
 		.title
 			&__bg
-				transform skewX(-20deg) translate(-50%, -50%)
+				// transform skewX(-20deg) translate(-50%, -50%)
 				width calc(100% + 14px)
 				margin-left -4px
 			
 			&__inner
-				transform skewX(20deg)
+				// transform skewX(20deg)
 
 			&__text
 				font-size (22rem / 16)
@@ -65,9 +97,20 @@ btn-red = #4a0c0c
 				b
 					font-weight 700
 	
+	&__text-wrapper
+		align-self flex-end
+		max-width 320px
+		text-align left
+		
+		.section--part &
+			max-width 327px
+	
 	&__text
 		align-self flex-end
 		padding 4px
+		
+		.section--part &:last-child
+			margin-left 25px
 
 		.title
 			&__text
@@ -90,6 +133,9 @@ btn-red = #4a0c0c
 			background-color btn-red
 			border-radius 17px
 			box-shadow 2px 2px 19px 5px rgba(black, .8)
+			
+			.section:nth-child(even) &
+				background-color btn-blue
 
 	&__btn
 		@extend $btn-reset
@@ -105,6 +151,9 @@ btn-red = #4a0c0c
 		color white
 		text-transform uppercase
 		box-shadow inset 0 0 10px 1px rgba(black, .34)
+		
+		.section:nth-child(even) &
+			background-color btn-face-blue
 			
 		
 		&:hover
@@ -158,6 +207,10 @@ btn-red = #4a0c0c
 		&__titles
 			width 79%
 			height 63%
+			
+			.section--branding &
+				width 75%
+				height 76%
 		
 		&__title
 			padding-top 4px
@@ -167,6 +220,19 @@ btn-red = #4a0c0c
 			.title
 				&__text
 					font-size (28rem / 16)
+		
+		&__emptiness
+			.section--part &
+				flex-grow 0
+				height 5px
+		
+		&__text-wrapper
+			max-width 415px
+			
+			.section--part &
+				max-width 360px
+				align-self flex-start
+				margin-left 20px
 		
 		&__text
 			padding-top 2px
@@ -212,6 +278,12 @@ btn-red = #4a0c0c
 		
 		&__face
 			margin-bottom 34px
+			
+			.section--branding &
+				margin-bottom 30px
+			
+			.section--vynil &
+				padding-top 28px
 
 		&__img
 			&--tablet
@@ -223,16 +295,28 @@ btn-red = #4a0c0c
 		&__titles
 			width 63%
 			height 40%
+			
+			.section--branding &
+			.section--vynil &
+				width 58%
+				height 70%
 		
 		&__title
+			// &.title
+			// 	padding-left 10px
+
 			.title
 				&__text
 					font-size (34rem / 16)
 		
+		&__text-wrapper
+			max-width 520px
+
 		&__text
 			&.title
 				padding 0
 				padding-top 1px
+				padding-left 5px
 
 			.title
 				&__text
@@ -249,6 +333,12 @@ btn-red = #4a0c0c
 			min-width 240px
 			min-height 50px
 			border-radius 22px
+			// box-shadow inset 0 0 10px 1px rgba(black, .34),
+			// 	inset 0 0 4px 2px rgba(white, .7)
+			
+			// &:hover
+			// 	box-shadow inset 0 0 18px 1px rgba(black, .6),
+			// 		inset 0 0 5px 3px rgba(white, .5)
 		
 		&__footer
 			background none
