@@ -1,0 +1,21 @@
+mixin price__column(mod, items)
+	.price__column(class='price__column--' + mod)
+		if mod !== 'white'
+			p.price__col-title Стоимость
+		ul.price__items
+			for item in items
+				li.price__item
+					span.price__text=item
+
+mixin price(color, title, subtitle, items)
+	.price(class='price--' + color)
+		.price__content
+			.price__header
+				h2.price__title
+					span.price__big=title
+					|  
+					span=subtitle
+			.price__body
+				+price__column('white', items[0])
+				+price__column('tall', items[1])
+				+price__column('mid', items[1])

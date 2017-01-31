@@ -1,0 +1,238 @@
+price-title-gray = #31
+price-title-red = #c42c30
+price-item-gray = #27
+price-border-gray = #d
+
+.prices
+	position relative
+
+.price
+	box-shadow 0 8px 13px rgba(black, .6)
+
+	&--red
+		background linear-gradient(45deg,
+			#c1 0%,
+			#ef 50%,
+			#c5 100%)
+
+	&__content
+		container()
+		
+		padding-top 75px
+		padding-bottom 10px
+		
+		.price--red &
+			padding-top 40px
+			padding-bottom 40px
+	
+	&__header
+		.price--red &
+			display flex
+			justify-content flex-end
+			margin-bottom 20px
+	
+	&__title
+		font-size (20rem / 16)
+		font-weight 500
+		color price-title-gray
+		display flex
+		flex-direction column
+		line-height 1em
+		
+		.price--blue &
+			max-width 210px
+		
+		.price--red &
+			text-align center
+		
+	&__big
+		font-size (40rem /16)
+		font-weight 900
+		text-transform uppercase
+		line-height 1em
+		
+		.price--blue &
+			color blue
+			margin-left 14px
+		
+		.price--red &
+			color price-title-red
+	
+	&__body
+		display flex
+		justify-content space-between
+		align-items flex-end
+		position relative
+		
+		.price--blue &
+			top -30px
+	
+	&__column
+		box-shadow 0 0 10px rgba(black, .5)
+		
+		&--white
+			margin-left 2px
+			padding 0px 21px 18px
+			margin-bottom 16px
+			background-color white
+		
+		&:not(&--white)
+			background-position top center
+			background-size cover
+			background-image url(/img/pattern--blue.jpg)
+			
+			.price--red &
+				background-image url(/img/pattern--red.jpg)
+		
+		&--tall
+			padding 7px
+		
+		&--mid
+			padding 5px 7px 7px
+	
+	&__col-title
+		font-weight 700
+		color white
+		text-shadow 2px 2px 0 rgba(black, .4)
+		text-align center
+		
+		.price__column--tall &
+			font-size (18rem / 16)
+			padding-top 2px
+			padding-bottom 8px
+		
+		.price__column--mid &
+			padding-bottom 4px
+
+	&__items
+		list-style-type none
+		
+		.price__column--tall &
+		.price__column--mid &
+			background-color white
+			padding 0 15px 27px
+		
+	&__item
+		display flex
+		align-items center
+
+		.price__column--white &:before
+			@extend $pseudo
+			
+			size 6px
+			border-radius 50%
+			background-color blue
+			margin-right 9px
+	
+	&__text
+		color price-item-gray
+		font-weight 500
+		font-size (14rem / 16)
+		border-bottom 2px dotted price-border-gray
+		padding 12px 0
+		
+		.price__column--white &
+			min-width 137px
+		
+		.price__column--tall &
+		.price__column--mid &
+			min-width 92px
+			text-align center
+	
+	@media (min-width tablet)
+		&__column
+			&--white
+				padding 6px 21px 18px
+
+			&--mid
+				margin-bottom 9px
+
+		&__col-title
+			.price__column--tall &
+				font-size (26rem / 16)
+				padding-top 10px
+				padding-bottom 16px
+			
+			.price__column--mid &
+				font-size (20rem / 16)
+				padding-top 4px
+				padding-bottom 5px
+		
+		&__items
+			.price__column--mid &
+				padding 0 15px 19px
+
+		&__text
+			font-size 1rem
+
+			.price__column--white &
+				min-width 176px
+			
+			.price__column--tall &
+				min-width 192px
+			
+			.price__column--mid &
+				min-width 194px
+	
+	@media (min-width desktop)
+		&__content
+			.price--red &
+				padding-bottom 60px
+
+		&__title
+			font-size (28rem / 16)
+
+			.price--blue &
+				max-width none
+
+			.price--red &
+				margin-right 88px
+
+		&__body
+			justify-content center
+			
+			.price--blue &
+				top -40px
+		
+		&__column
+			&--white
+				margin-left 0
+				padding 10px 24px 27px 19px
+				margin-bottom 10px
+			
+			&--tall
+				margin-left 8px
+				margin-right 8px
+			
+			&--mid
+				margin-bottom 10px
+		
+		&__items
+			.price__column--tall &
+				padding 6px 17px 30px 27px
+			
+			.price__column--mid &
+				padding 4px 22px 20px
+		
+		&__big
+			font-size (60rem / 16)
+			
+			.price--blue &
+				margin-left 25px
+		
+		&__col-title
+			.price__column--tall
+				font-size (30rem / 16)
+				padding-top 16px
+				padding-bottom 23px
+			
+			.price__column--mid
+				font-size (24rem / 16)
+				padding-top 11px
+				padding-bottom 12px
+		
+		&__text
+			.price__column--white &
+			.price__column--tall &
+			.price__column--mid &
+				min-width 230px
