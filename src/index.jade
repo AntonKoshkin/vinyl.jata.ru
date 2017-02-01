@@ -10,6 +10,7 @@ html(lang='ru')
 			include ./components/features/features
 			include ./components/sections/sections
 			include ./components/prices/prices
+			section.map#map
 
 		include ./components/footer/footer
 
@@ -18,6 +19,9 @@ html(lang='ru')
 		//- если не загружается, то подтягиваем свой
 		script.
 			window.jQuery || document.write('<script src=\'js/jquery.min.js\'><\/script>')
+		
+		//- maps
+		script(src='https://api-maps.yandex.ru/2.1/?lang=ru_RU')
 
 		//- свои скрипты
 		script(src='js/main.js')

@@ -16,7 +16,7 @@ include ./links
 -var siteImgWidth		= '300px'
 -var siteImgHeight	= '300px'
 
--var needHTML5shiv	= true
+-var needHTML5shiv	= false
 
 meta(charset='UTF-8')
 
@@ -198,7 +198,7 @@ if needHTML5shiv
 script(src='js/flexbox-polifill.js')
 
 //- IE 10, 11 detecting
-<script>if(/*@cc_on!@*/false){document.documentElement.className+=' ie10';};if(top.VBArray){document.documentElement.className+=' ie11';}</script>
+//- <script>if(/*@cc_on!@*/false){document.documentElement.className+=' ie10';};if(top.VBArray){document.documentElement.className+=' ie11';}</script>
 
 //- fonts
 //- link(
@@ -218,8 +218,8 @@ link(
 	defer)
 
 //- yandex maps API
-// yandex maps
-script(src='https://api-maps.yandex.ru/2.1/?lang=ru_RU')
+//- yandex maps
+//- script(src='https://api-maps.yandex.ru/2.1/?lang=ru_RU')
 
 //- metrics
 //- <!-- Yandex.Metrika counter --> <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter39717030 = new Ya.Metrika({ id:39717030, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/39717030" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->

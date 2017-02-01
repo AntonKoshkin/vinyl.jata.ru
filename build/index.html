@@ -31,12 +31,9 @@
 		<meta name="msapplication-navbutton-color" content="#4b5a6e"/>
 		<meta name="apple-mobile-web-app-capable" content="yes"/>
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
-		<meta name="format-detection" content="telephone=no"/><!--[if lt IE 9]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-		<script src="js/flexbox-polifill.js"></script><script>if(/*@cc_on!@*/false){document.documentElement.className+=' ie10';};if(top.VBArray){document.documentElement.className+=' ie11';}</script>
+		<meta name="format-detection" content="telephone=no"/>
+		<script src="js/flexbox-polifill.js"></script>
 		<link rel="stylesheet" href="css/style.css"/>
-		<!-- yandex maps-->
-		<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
 	</head>
 	<body class="vynil">
 		<header class="header">
@@ -561,6 +558,7 @@
 								</div>
 							</div>
 			</section>
+			<section id="map" class="map"></section>
 		</main>
 		<footer class="footer">
 			<div class="footer__content">
@@ -593,6 +591,7 @@
 			window.jQuery || document.write('<script src=\'js/jquery.min.js\'><\/script>')
 			
 		</script>
+		<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
 		<script src="js/main.js"></script>
 	</body>
 </html>
