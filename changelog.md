@@ -6,4 +6,4 @@ nothing is here
 26.01.17 - about 6h
 30.01.17 - about 7h
 31.01.17 - about 6h
-1.2.17 - about 6h
+1.2.17 - about 4h

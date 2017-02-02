@@ -1,7 +1,8 @@
 'use strict';
 
-import {Nav, Burger}	from '../components/header/header';
-import {map}			from '../components/map/map';
+import {Nav, Burger}		from '../components/header/header';
+import {map}				from '../components/map/map';
+import {cat, carousel}	from '../components/gallery/gallery';
 
 const vynil = {
 	/**
@@ -18,13 +19,13 @@ const vynil = {
 	 * инит функция
 	 */
 	init() {
-		console.log('ya rodilsya!');
-
 		const nav = Nav();
 		const burger = Burger(nav);
 
 		nav.init();
 		burger.init();
+		cat.init();
+		carousel.init();
 		map.init();
 	},
 };

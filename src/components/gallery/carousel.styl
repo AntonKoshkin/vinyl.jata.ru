@@ -1,0 +1,206 @@
+.carousel
+	position relative
+	
+	&__stage
+		min-height 240px
+		position relative
+		perspective 100px
+		overflow hidden
+		
+		@media (min-width tablet)
+			min-height 264px
+		
+		&--hidden
+			opacity 0
+	
+	&__item
+		width 280px
+		height 240px
+		position absolute
+		top 50%
+		transform-style preserve-3d
+		transition all .3s linear
+		
+		@media (min-width tablet)
+			width 310px
+			height 264px
+		
+		&--back
+			left 50%
+			right 50%
+			transform translate3d(-50%, -50%, -50px)
+			opacity 0
+		
+		&--active
+			left 50%
+			z-index 3
+			transform translate3d(-50%, -50%, 0)
+			opacity 1
+		
+		&--second
+			z-index 2
+			transform translate3d(-50%, -50%, -25px)
+			opacity 1
+		
+		&--third
+			z-index 1
+			transform translate3d(-50%, -50%, -50px)
+			opacity 1
+			
+			@media (min-width tablet)
+				display inline-block
+				
+				transform translate3d(-50%, -50%, -50px)
+		
+		// for side in 'left' 'right'
+		// 	&--second&--{side}
+		// 		{side} -3%
+			
+		// 		@media (min-width tablet)
+		// 			{side} 12%
+				
+		// 		@media (min-width desktop)
+		// 			{side} 15%
+			
+		// 	&--third&--{side}
+		// 		{side} 50%
+
+		// 		@media (min-width tablet)
+		// 			{side} -10%
+				
+		// 		@media (min-width desktop)
+		// 			{side} -16%
+		
+		
+		secLeftOffsets = {
+			mobile : 25%
+			tablet : 30%
+			desktop: 24%
+		}
+		secRightOffsets = {
+			mobile : 100 - secLeftOffsets['mobile']
+			tablet : 100 - secLeftOffsets['tablet']
+			desktop: 100 - secLeftOffsets['desktop']
+		}
+		thirdLeftOffsets = {
+			mobile : 50%
+			tablet : 50%
+			desktop: -5%
+		}
+		thirdRightOffsets = {
+			mobile : 100 - thirdLeftOffsets['mobile']
+			tablet : 100 - thirdLeftOffsets['tablet']
+			desktop: 100 - thirdLeftOffsets['desktop']
+		}
+		
+		&--second&--left
+			left secLeftOffsets['mobile']
+			
+		&--second&--right
+			left secRightOffsets['mobile']
+		
+		&--third&--left
+			left thirdLeftOffsets['mobile']
+			
+		&--third&--right
+			left thirdRightOffsets['mobile']
+			
+		@media (min-width tablet)
+			&--second&--left
+				left secLeftOffsets['tablet']
+				
+			&--second&--right
+				left secRightOffsets['tablet']
+				
+			&--third&--left
+				left thirdLeftOffsets['tablet']
+				
+			&--third&--right
+				left thirdRightOffsets['tablet']
+		
+		@media (min-width desktop)
+			&--second&--left
+				left secLeftOffsets['desktop']
+				
+			&--second&--right
+				left secRightOffsets['desktop']
+				
+			&--third&--left
+				left thirdLeftOffsets['desktop']
+				
+			&--third&--right
+				left thirdRightOffsets['desktop']
+			
+		
+
+
+	&__bg
+	&__inner
+		position absolute
+		top 0
+		height 100%
+	
+	&__bg
+		left 0
+		width 100%
+		box-shadow 3px 3px 4px rgba(black, .5)
+	
+	&__img
+		position absolute
+		width calc(100% - 12px)
+		height @width
+		top 6px
+		left 6px
+		
+		@media (min-width tablet)
+			top 7px
+			left 7px
+			width calc(100% - 14px)
+	
+	&__bg
+	&__img
+		transform skewX(-10deg)
+		overflow hidden
+		background-color white
+	
+	&__inner
+		transform skewX(10deg)
+		background-size cover
+		opacity .6
+		translate all .3s linear
+		
+		.carousel__item--active &
+			opacity 1
+		
+		.carousel__bg &
+			background-image url(/img/pattern--blue.jpg)
+			left -50%
+			width 200%
+		
+		.carousel__img &
+			background-image url(http://placehold.it/500x500)
+			background-repeat no-repeat
+			background-size cover
+			width calc(100% + 40px)
+			height 100%
+			left -20px
+			
+			@media (min-width tablet)
+				left -22px
+				width calc(100% + 44px)
+	
+	&__btn
+		@extend $btn-reset, $abs
+		
+		top 50%
+		transform translate(-50%, -50%)
+		
+		&--prev
+			left 0
+		
+		&--next
+			right 0
+	
+	&__svg
+		width 16px
+		height 32px
