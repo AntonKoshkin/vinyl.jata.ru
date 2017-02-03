@@ -1,7 +1,8 @@
 'use strict';
 
 // const buildRoot = '../../OpenServer/domains/admin.jata.ru';
-const buildRoot = 'build/static';
+const buildRoot	= 'build';
+const buildStatic	= 'build/static';
 
 module.exports = {
 	eslintrc: '.eslintrc.js',
@@ -39,17 +40,17 @@ module.exports = {
 		},
 		build: {
 			assets: {
-				else: buildRoot,
-				js  : buildRoot + '/js/',
+				else: buildStatic,
+				js  : buildStatic + '/js/',
 			},
 
-			img      : buildRoot + '/img/',
-			jade     : 'build/',
-			js       : buildRoot + '/js/',
-			pngSprite: buildRoot + '/img/',
-			stylus   : buildRoot + '/css/',
-			svgSprite: buildRoot + '/img/',
-			video    : buildRoot + '/video/',
+			img      : buildStatic + '/img/',
+			jade     : buildRoot,
+			js       : buildStatic + '/js/',
+			pngSprite: buildStatic + '/img/',
+			stylus   : buildStatic + '/css/',
+			svgSprite: buildStatic + '/img/',
+			video    : buildStatic + '/video/',
 		},
 
 		watch: {

@@ -121,7 +121,7 @@ meta(
 	content=projectImg)
 
 //- favicon
-link(
+//- link(
 	rel='icon'
 	type='image/png'
 	sizes=faviconSize+'x'+faviconSize
@@ -195,7 +195,7 @@ if needHTML5shiv
 	<![endif]-->
 
 //- flexbox polifill
-script(src='js/flexbox-polifill.js')
+script(src=linkTo.static + 'js/flexbox-polifill.js')
 
 //- IE 10, 11 detecting
 //- <script>if(/*@cc_on!@*/false){document.documentElement.className+=' ie10';};if(top.VBArray){document.documentElement.className+=' ie11';}</script>
@@ -209,7 +209,7 @@ script(src='js/flexbox-polifill.js')
 //- own styles
 link(
 	rel='stylesheet'
-	href='css/style.css')
+	href=linkTo.static + 'css/style.css')
 
 //- modernizr
 //- script(

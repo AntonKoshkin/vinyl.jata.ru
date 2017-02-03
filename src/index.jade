@@ -19,10 +19,10 @@ html(lang='ru')
 		script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js')
 		//- если не загружается, то подтягиваем свой
 		script.
-			window.jQuery || document.write('<script src=\'js/jquery.min.js\'><\/script>')
+			window.jQuery || document.write('<script src=\'#{linkTo.static}js/jquery.min.js\'><\/script>')
 		
 		//- maps
 		script(src='https://api-maps.yandex.ru/2.1/?lang=ru_RU')
 
 		//- свои скрипты
-		script(src='js/main.js')
+		script(src=linkTo.static + 'js/main.js')

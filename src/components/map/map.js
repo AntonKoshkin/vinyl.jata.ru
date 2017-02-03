@@ -45,7 +45,7 @@ exports.map = {
 				balloonContent: markParams.title,
 			}, {
 				iconLayout     : 'default#image',
-				iconImageHref  : '/img/map__pin.svg',
+				iconImageHref  : '/static/img/map__pin.svg',
 				iconImageSize  : [36, 51],
 				iconImageOffset: [-18, -51]
 			}

@@ -254,43 +254,43 @@ input[type=number]::-webkit-outer-spin-button {
   font-family: 'museo';
   font-weight: 300;
   font-style: normal;
-  src: url("../fonts/museo/normal/300.eot");
-  src: url("../fonts/museo/normal/300.woff") format('woff'), url("../fonts/museo/normal/300.ttf") format('truetype');
+  src: url("/static/fonts/museo/normal/300.eot");
+  src: url("/static/fonts/museo/normal/300.woff") format('woff'), url("/static/fonts/museo/normal/300.ttf") format('truetype');
 }
 @font-face {
   font-family: 'museo';
   font-weight: 500;
   font-style: normal;
-  src: url("../fonts/museo/normal/500.eot");
-  src: url("../fonts/museo/normal/500.woff") format('woff'), url("../fonts/museo/normal/500.ttf") format('truetype');
+  src: url("/static/fonts/museo/normal/500.eot");
+  src: url("/static/fonts/museo/normal/500.woff") format('woff'), url("/static/fonts/museo/normal/500.ttf") format('truetype');
 }
 @font-face {
   font-family: 'museo';
   font-weight: 900;
   font-style: normal;
-  src: url("../fonts/museo/normal/900.eot");
-  src: url("../fonts/museo/normal/900.woff") format('woff'), url("../fonts/museo/normal/900.ttf") format('truetype');
+  src: url("/static/fonts/museo/normal/900.eot");
+  src: url("/static/fonts/museo/normal/900.woff") format('woff'), url("/static/fonts/museo/normal/900.ttf") format('truetype');
 }
 @font-face {
   font-family: 'museo';
   font-weight: 300;
   font-style: italic;
-  src: url("../fonts/museo/italic/300.eot");
-  src: url("../fonts/museo/italic/300.woff") format('woff'), url("../fonts/museo/italic/300.ttf") format('truetype');
+  src: url("/static/fonts/museo/italic/300.eot");
+  src: url("/static/fonts/museo/italic/300.woff") format('woff'), url("/static/fonts/museo/italic/300.ttf") format('truetype');
 }
 @font-face {
   font-family: 'museo';
   font-weight: 700;
   font-style: italic;
-  src: url("../fonts/museo/italic/700.eot");
-  src: url("../fonts/museo/italic/700.woff") format('woff'), url("../fonts/museo/italic/700.ttf") format('truetype');
+  src: url("/static/fonts/museo/italic/700.eot");
+  src: url("/static/fonts/museo/italic/700.woff") format('woff'), url("/static/fonts/museo/italic/700.ttf") format('truetype');
 }
 @font-face {
   font-family: 'museo';
   font-weight: 900;
   font-style: italic;
-  src: url("../fonts/museo/italic/900.eot");
-  src: url("../fonts/museo/italic/900.woff") format('woff'), url("../fonts/museo/italic/900.ttf") format('truetype');
+  src: url("/static/fonts/museo/italic/900.eot");
+  src: url("/static/fonts/museo/italic/900.woff") format('woff'), url("/static/fonts/museo/italic/900.ttf") format('truetype');
 }
 .price__column--white .price__item:before,
 .section__btn-wrapper:before,
@@ -469,10 +469,10 @@ body {
 .price__column:not(.price__column--white) {
   background-position: top center;
   background-size: cover;
-  background-image: url("/img/pattern--blue.jpg");
+  background-image: url("/static/img/pattern--blue.jpg");
 }
 .price--red .price__column:not(.price__column--white) {
-  background-image: url("/img/pattern--red.jpg");
+  background-image: url("/static/img/pattern--red.jpg");
 }
 .price__column--tall {
   padding: 7px;
@@ -634,20 +634,20 @@ body {
   position: relative;
 }
 .section--antigrav {
-  background-image: url("/img/section__bg--antigrav.jpg");
+  background-image: url("/static//img/section__bg--antigrav.jpg");
 }
 .section--branding {
-  background-image: url("/img/section__bg--branding.jpg");
+  background-image: url("/static//img/section__bg--branding.jpg");
 }
 .section--full {
-  background-image: url("/img/section__bg--full.jpg");
+  background-image: url("/static//img/section__bg--full.jpg");
 }
 .section--vynil {
-  background-image: url("/img/section__bg--vynil.jpg");
+  background-image: url("/static//img/section__bg--vynil.jpg");
   background-position: center;
 }
 .section--part {
-  background-image: url("/img/section__bg--part.jpg");
+  background-image: url("/static//img/section__bg--part.jpg");
 }
 .section__content {
   max-width: 480px;
@@ -1101,10 +1101,10 @@ body {
   opacity: 0.8;
 }
 .title--red .title__inner {
-  background-image: url("/img/pattern--red.jpg");
+  background-image: url("/static/img/pattern--red.jpg");
 }
 .title--blue .title__inner {
-  background-image: url("/img/pattern--blue.jpg");
+  background-image: url("/static/img/pattern--blue.jpg");
 }
 .title__text {
   color: #fff;
@@ -1280,7 +1280,7 @@ body {
 .footer__logo {
   width: 244px;
   height: 36px;
-  background-image: url("/img/footer__logo.png");
+  background-image: url("/static/img/footer__logo.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -1316,6 +1316,11 @@ body {
 @media (min-width: 760px) {
   .carousel__stage {
     min-height: 264px;
+  }
+}
+@media (min-width: 1180px) {
+  .carousel__stage {
+    min-height: 270px;
   }
 }
 .carousel__stage--hidden {
@@ -1456,7 +1461,7 @@ body {
   opacity: 1;
 }
 .carousel__bg .carousel__inner {
-  background-image: url("/img/pattern--blue.jpg");
+  background-image: url("/static//img/pattern--blue.jpg");
   left: -50%;
   width: 200%;
 }
@@ -1589,7 +1594,7 @@ body {
   bottom: -5px;
 }
 .gallery {
-  background-image: url("/img/gallery__bg.jpg");
+  background-image: url("/static//img/gallery__bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -1705,7 +1710,7 @@ body {
   height: 100%;
   width: 130%;
   min-width: 250px;
-  background-image: url("/img/pattern--red.jpg");
+  background-image: url("/static/img/pattern--red.jpg");
   -webkit-transform: skewX(45deg);
       -ms-transform: skewX(45deg);
           transform: skewX(45deg);
@@ -1758,7 +1763,7 @@ body {
   -ms-flex-item-align: stretch;
       -ms-grid-row-align: stretch;
       align-self: stretch;
-  background-image: url("/img/header__logo.png");
+  background-image: url("/static/img/header__logo.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -1903,7 +1908,7 @@ body {
   }
 }
 .promo {
-  background-image: url("/img/promo__bg.jpg");
+  background-image: url("/static/img/promo__bg.jpg");
   background-position: 50% 100%;
   background-repeat: no-repeat;
   background-size: 200%;
@@ -1987,7 +1992,7 @@ body {
 }
 .promo__car {
   width: 100%;
-  background-image: url("/img/promo__car.png");
+  background-image: url("/static//img/promo__car.png");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -2098,7 +2103,7 @@ body {
   left: -20%;
   width: 132%;
   height: 130%;
-  background-image: url("/img/pattern--blue.jpg");
+  background-image: url("/static//img/pattern--blue.jpg");
   background-position: 1% 1%;
   background-size: 100%;
   -webkit-transform: perspective(150px) rotateX(34.5deg);

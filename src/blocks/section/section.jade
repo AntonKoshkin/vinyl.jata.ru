@@ -1,11 +1,13 @@
+include ../template/links
+
 mixin section(name, prices)
 	section.section(class='section--' + name)
 		.section__body
 			.section__content
 				.section__face
-					img.section__img.section__img--mobile(src='/img/section__img--' + name + '-mobile.png')
-					img.section__img.section__img--tablet(src='/img/section__img--' + name + '-tablet.png')
-					img.section__img.section__img--desktop(src='/img/section__img--' + name + '-desktop.png')
+					img.section__img.section__img--mobile(src=linkTo.static + '/img/section__img--' + name + '-mobile.png')
+					img.section__img.section__img--tablet(src=linkTo.static + '/img/section__img--' + name + '-tablet.png')
+					img.section__img.section__img--desktop(src=linkTo.static + '/img/section__img--' + name + '-desktop.png')
 					.section__titles
 						if block
 							block

@@ -3,7 +3,7 @@ include ../../blocks/title/title
 mixin feature(num)
 	.feature(class='reature--' + num)
 		.feature__shadow
-		img.feature__img(src='/img/feature__item--' + num + '.png')
+		img.feature__img(src=linkTo.static + '/img/feature__item--' + num + '.png')
 		.feature__titles
 			if block
 				block

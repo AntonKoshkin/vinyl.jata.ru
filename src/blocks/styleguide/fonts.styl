@@ -22,9 +22,9 @@ font(family, name, style, weight)
 		font-family family
 		font-weight weight
 		font-style style
-		src url('../fonts/'+name+'/'+style+'/'+weight+'.eot')
-		src url('../fonts/'+name+'/'+style+'/'+weight+'.woff') format('woff'),
-			url('../fonts/'+name+'/'+style+'/'+weight+'.ttf') format('truetype')
+		src url(pathToStatic + 'fonts/'+name+'/'+style+'/'+weight+'.eot')
+		src url(pathToStatic + 'fonts/'+name+'/'+style+'/'+weight+'.woff') format('woff'),
+			url(pathToStatic + 'fonts/'+name+'/'+style+'/'+weight+'.ttf') format('truetype')
 
 // font('museo', 'museo', normal, 100)
 font('museo', 'museo', normal, 300)
