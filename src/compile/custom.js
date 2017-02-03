@@ -1,8 +1,9 @@
 'use strict';
 
-import {Nav, Burger}		from '../components/header/header';
-import {map}				from '../components/map/map';
-import {cat, carousel}	from '../components/gallery/gallery';
+import {Nav, Burger}	from '../components/header/header';
+import {map}			from '../components/map/map';
+import {cat}			from '../components/gallery/gallery';
+import {carousel}		from '../components/gallery/carousel';
 
 const vynil = {
 	/**

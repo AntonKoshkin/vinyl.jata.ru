@@ -1,7 +1,7 @@
 'use strict';
 
 // const buildRoot = '../../OpenServer/domains/admin.jata.ru';
-const buildRoot = 'build';
+const buildRoot = 'build/static';
 
 module.exports = {
 	eslintrc: '.eslintrc.js',
@@ -44,7 +44,7 @@ module.exports = {
 			},
 
 			img      : buildRoot + '/img/',
-			jade     : buildRoot + '/',
+			jade     : 'build/',
 			js       : buildRoot + '/js/',
 			pngSprite: buildRoot + '/img/',
 			stylus   : buildRoot + '/css/',

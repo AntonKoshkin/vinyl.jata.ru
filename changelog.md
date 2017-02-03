@@ -7,3 +7,5 @@ nothing is here
 30.01.17 - about 7h
 31.01.17 - about 6h
 1.2.17 - about 4h
+2.2.17 - about 7h
+3.2.17 - about 4h

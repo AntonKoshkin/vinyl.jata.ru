@@ -51,27 +51,7 @@
 				display inline-block
 				
 				transform translate3d(-50%, -50%, -50px)
-		
-		// for side in 'left' 'right'
-		// 	&--second&--{side}
-		// 		{side} -3%
-			
-		// 		@media (min-width tablet)
-		// 			{side} 12%
-				
-		// 		@media (min-width desktop)
-		// 			{side} 15%
-			
-		// 	&--third&--{side}
-		// 		{side} 50%
 
-		// 		@media (min-width tablet)
-		// 			{side} -10%
-				
-		// 		@media (min-width desktop)
-		// 			{side} -16%
-		
-		
 		secLeftOffsets = {
 			mobile : 25%
 			tablet : 30%
@@ -167,7 +147,7 @@
 		transform skewX(10deg)
 		background-size cover
 		opacity .6
-		translate all .3s linear
+		transition all .3s linear
 		
 		.carousel__item--active &
 			opacity 1
@@ -178,7 +158,6 @@
 			width 200%
 		
 		.carousel__img &
-			background-image url(http://placehold.it/500x500)
 			background-repeat no-repeat
 			background-size cover
 			width calc(100% + 40px)
