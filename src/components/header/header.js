@@ -6,6 +6,16 @@ exports.Nav = () => {
 
 		init() {
 			this.nav = $('#nav');
+
+			$('a[href^="#"]').on('click', function(event) {
+				$('html,body')
+					.stop()
+					.animate(
+						{scrollTop: $($(this).attr('href')).offset().top},
+						1000
+				);
+				event.preventDefault();
+			});
 		},
 
 		toggle() {
