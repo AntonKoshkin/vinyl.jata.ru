@@ -1,0 +1,159 @@
+tenon-text-white = #fe
+
+.tenon
+	@extend $btn-reset
+	
+	display flex
+	align-items stretch
+	width 360px
+	height 37px
+	position absolute
+	top 0
+	right 20px
+	
+	@media (min-width tablet)
+		width 395px
+		height 47px
+	
+	@media (min-width desktop)
+		width 434px
+	
+	&--callback
+		position fixed
+		width 320px
+		top 120px
+		left 107%
+		transform rotate(90deg)
+		transform-origin top left
+		height 31px
+		cursor pointer
+		transition all .3s
+		
+		@media (min-width tablet)
+			width 350px
+			height 41px
+		
+		@media (min-width desktop)
+			width 360px
+			height 47px
+	
+	&--callback&--show
+		left 100%
+	
+	&__shadow
+		position absolute
+		bottom 1px
+		left 50%
+		transform translateX(-50%)
+		width 79%
+		box-shadow 5px 5px 20px rgba(black, .8)
+		height 10px
+		
+		@media (min-width tablet)
+			width 75%
+		
+		@media (min-width desktop)
+			width 78%
+		
+		.tenon--callback &
+			width 75%
+			
+			@media (min-width tablet)
+				width 74%
+		
+		&:before
+		&:after
+			content ''
+			position absolute
+			top 100%
+			width 62px
+			height 100%
+			
+			@media (min-width tablet)
+				width 80px
+		
+		&:before
+			left 0
+			transform-origin left top
+			transform rotate(-135deg)
+			box-shadow -6px -4px 20px rgba(black, .8)
+		
+		&:after
+			right 0
+			transform-origin right top
+			transform rotate(135deg)
+			box-shadow -3px -7px 20px rgba(black, .8)
+	
+	&__bg
+	&__clipper
+	&__inner
+		position absolute
+		top 0
+		width 100%
+		height 100%
+		overflow hidden
+		
+		.tenon--callback &
+			border-color white
+			border-style solid
+			border-width 0
+	
+	&__bg
+	&__inner
+		transform skewX(45deg)
+
+	&__bg
+		left 0
+		transform-origin left top
+		flex-grow 0
+		
+		.tenon--callback &
+			border-left-width 2px
+	
+	&__clipper
+		transform-origin left top
+		transform skewX(-63.5deg)
+		left 0
+		
+		.tenon--callback &
+			border-right-width 2px
+	
+	&__inner
+		right 0
+		background-image url(pathToStatic + '/img/pattern--blue.jpg')
+		background-position 1% 1%
+		background-size 100%
+		transform-origin right top
+
+		.tenon--callback &
+			background-image url(pathToStatic + '/img/pattern--red.jpg')
+			border-bottom-width 1px
+
+	&__content
+		position relative
+		flex-grow 1
+		display flex
+		align-items center
+		justify-content center
+
+	&__pointer
+		height 21px
+		margin-right 5px
+
+		path
+			fill red
+	
+	&__text
+		color tenon-text-white
+		font-size (14rem / 16)
+		font-weight 500
+		text-shadow 2px 2px 2px rgba(black, .6)
+		transform-origin center
+	
+		.tenon--callback &
+			font-weight 700
+			text-transform uppercase
+			transform rotate(180deg)
+			
+			@media (min-width tablet)
+				font-size 1rem

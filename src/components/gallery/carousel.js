@@ -1,13 +1,22 @@
 /* global $ */
 
-exports.carousel = {
+const carousel = {
+	stage  : null,
 	images : null,
 	items  : null,
 	first  : 0,
 	seconds: [],
 	thirds : [],
 
+	touch: {
+		start: null,
+		end  : null,
+	},
+
+
 	init() {
+		this.stage = document.getElementById('stage');
+
 		this.getImages();
 		this.makeItems();
 		this.items = $('.carousel__item');
@@ -20,6 +29,29 @@ exports.carousel = {
 		$('body').on('click', '.carousel__btn--prev', () => {
 			this.change('prev');
 		});
+
+		this.stage.addEventListener('touchstart', this.onTouchStart, false);
+	},
+
+	onTouchStart(event) {
+		carousel.touch.start = event.changedTouches[0].clientX;
+		carousel.stage.addEventListener('touchmove', carousel.onTouchMove, false);
+	},
+
+	onTouchMove(event) {
+		carousel.touch.end = event.changedTouches[0].clientX;
+
+		if (carousel.touch.start < carousel.touch.end) {
+			carousel.change('prev');
+		} else {
+			carousel.change('next');
+		}
+
+		carousel.stage.removeEventListener('touchmove', carousel.onTouchMove, false);
+	},
+
+	onTouchEnd(event) {
+		console.log(event.changedTouches[0]);
 	},
 
 	getImages() {
@@ -190,3 +222,5 @@ exports.carousel = {
 		this.addClassesToItems();
 	},
 };
+
+exports.carousel = carousel;

@@ -1,0 +1,54 @@
+.modals
+	.modal__bg#background
+
+	.callback#callback-modal
+		h4.callback__title Заполните поля
+		p.callback__text Наш менеджер свяжется с Вами в ближайшее время
+		input.callback__input#callback-name(
+			type='text'
+			required
+			placeholder='Имя'
+			name='name')
+		input.callback__input#callback-tel(
+			type='tel'
+			required
+			placeholder='Телефон'
+			name='phone')
+		button.callback__btn#callback-send(type='button') Заказать звонок
+
+	.discount#discount-modal
+		button.discount__close#discount-close(type='button')
+		.discount__content
+			h4.discount__title Получить скидку
+			p.discount__text Введите необходимые данные и мы вышлем Вам персональную скидку
+			.discount__inputs
+				input.discount__input#discount-name(
+					type='text'
+					required
+					placeholder='Имя'
+					name='name')
+				input.discount__input#discount-tel(
+					type='tel'
+					required
+					placeholder='Телефон'
+					name='phone')
+			.discount__btn-wrapper
+				button.discount__btn#discount-send(type='button') Получить скидку
+
+	button.up-btn(
+		type='button'
+		title='наверх')
+		svg.up-btn__svg(
+			version='1.1'
+			id='Слой_1'
+			xmlns='http://www.w3.org/2000/svg'
+			xmlns:xlink='http://www.w3.org/1999/xlink'
+			x='0px'
+			y='0px'
+			viewBox='0 0 38.9 38.9'
+			style='enable-background:new 0 0 38.9 38.9;'
+			xml:space='preserve')
+			g(transform='translate(0,-952.36218)')
+				path(
+					style='fill:#00A3AF;'
+					d='M19.5,952.4C8.7,952.4,0,961.1,0,971.8c0,10.8,8.7,19.5,19.5,19.5s19.5-8.7,19.5-19.5C38.9,961.1,30.2,952.4,19.5,952.4z M19.4,964.4c0.3,0,0.6,0.1,0.8,0.3l10.2,11.1c0.3,0.4,0.3,1-0.1,1.3c-0.4,0.3-1,0.3-1.3-0.1l-9.5-10.4L10,977.1c-0.3,0.4-0.9,0.4-1.3,0c-0.4-0.3-0.4-0.9-0.1-1.3l10.2-11.1C18.9,964.5,19.2,964.4,19.4,964.4z')

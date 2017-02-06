@@ -1,33 +1,8 @@
 include ../../blocks/template/links
+include ../../blocks/tenon/tenon
 
 section.promo
-	.tenon
-		.tenon__shadow
-		.tenon__bg
-			.tenon__inner
-		.tenon__content
-			svg.tenon__pointer(
-				xmlns='http://www.w3.org/2000/svg'
-				xmlns:xlink='http://www.w3.org/1999/xlink'
-				viewBox='0 0 20 28')
-				defs
-					clipPath(
-						id='a'
-						transform='translate(3 2.8)')
-						rect(
-							width='12.28'
-							height='21.2'
-							style='fill:none')
-				image(
-					width='20'
-					height='28'
-					xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAcCAYAAABh2p9gAAAACXBIWXMAAAsSAAALEgHS3X78AAACUUlEQVRIS5WVPUhbURzF/3kBLVQjaKF0awU/ZqGbcREnl0Kndi+lQ7t17irikqGFLl0VKrp0Kii4CoIIQurSQkGkH1JtG42axHNyzws3L+++ROHHzbvee+75f9z3rNFoWAj85UQkms+ZezKE8qAfFMCwKGguHxJOE4u0aQSMgSKYF0XNjWhNlCmokwfAKJgFL0AJLIuS5ma1hmvzqYJyxgWT4Kk2fwZlcCjKmitpzaT2RG2C5nLGEB6AJ+AD2AM/wRm4FBXN7WkNRUe1N5cUZMKnwRLYBScSuQJViXG80P8oSqcMnznN+4KRJpl45upQYjXwH3w3Fy7HfxKlU4bPnLJQTZe+4B3wCKxpMZ2dg2/gE3ivkc9MQ0WH0CWrXwgJrnuCp2AbLIBnGrc1T5eMhBExsuGmThfBv2DHnIvXGnc037OgH3JVm+hqQyOfmQqGnRlyXJQVay8KRVnVY41VHfYHbIGXYALc8gXjtinqxLIc1D1q3m8KHoFV8BjctUTbxI3N8rMN2A6/tLGRoG7t4c6AIdNtSd5jhj0H3oEDc7mqJwSvdFhHDyYF6ZJ5YD5emcsP81SzTndfdOicebck9LZhPpgX5ufI2sNOuhuXiVxIkNVmPpiXtOJkuksTzCpOV3cdgoHi0FFF7g6y3IUE4+KMey5/gN/mCsWCtRq5q2CKy7dgH3wFHy3RyL0K+i6fm7vfm2DR3Eu41cg9CXou+QZhxfmmeSN3/Ey0GvkmgnHF74Ep8BDcB7dD7jIFJcq+7DP3ZRu0wLe4Z0HPaYtu668By0myZ9Qqp2UAAAAASUVORK5CYII='
-					style='opacity:0.5')
-				g(style='clip-path:url(#a)')
-					path(
-						d='M6.14,0A6.22,6.22,0,0,0,0,6.31,8,8,0,0,0,.49,8.84L6.14,21.2,11.79,8.84a8,8,0,0,0,.49-2.53A6.22,6.22,0,0,0,6.14,0m0,3.91A2.23,2.23,0,1,1,3.91,6.14,2.23,2.23,0,0,1,6.14,3.91'
-						transform='translate(3 2.8)')
-			p.tenon__text=address
+	+tenon(address, 'address')
 
 	.promo__content
 		h1.promo__title

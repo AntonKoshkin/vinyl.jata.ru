@@ -1,0 +1,130 @@
+gray-border = #d0
+blue-btn = #228dcb
+blue-btn-dark = #0f3e5b
+
+.discount
+	position fixed
+	top 50%
+	left 50%
+	transform translate(-50%, -50%)
+	width 370px
+	padding 7px
+	background-image url(pathToStatic + '/img/pattern--blue.jpg')
+	background-size cover
+	display none
+	
+	@media (min-width tablet)
+		width 640px
+	
+	&--show
+		display inline-block
+	
+	&__content
+		background-color white
+		padding 32px 42px 43px
+		display flex
+		flex-direction column
+		align-items stretch
+	
+	&__title
+		font-size 1.5rem
+		font-weight 900
+		color blue
+		text-transform uppercase
+		text-align center
+		
+		@media (min-width tablet)
+			font-size (30rem / 16)
+	
+	&__text
+		margin-bottom 20px
+		text-align center
+	
+	&__inputs
+		display flex
+		flex-direction column
+		align-items stretch
+		
+		@media (min-width tablet)
+			flex-direction row
+			justify-content space-around
+			margin-bottom 17px
+	
+	&__input
+		font-weight 500
+		padding 15px 18px 14px
+		border 1px solid gray-border
+		border-radius 25px
+		margin-bottom 17px
+		
+		@media (min-width tablet)
+			width 240px
+			margin-bottom 0
+	
+	&__btn-wrapper
+		display flex
+		position relative
+		
+		@media (min-width tablet)
+			width 240px
+			align-self center
+		
+		&:before
+			@extend $pseudo
+			
+			position absolute
+			width 100%
+			height 100%
+			left 0
+			top 4px
+			background-color blue-btn-dark
+			border-radius 25px
+			box-shadow 2px 2px 19px 5px rgba(black, .8)
+
+	&__btn
+		@extend $btn-reset
+		
+		flex-grow 1
+		min-height 50px
+		font-weight 700
+		color white
+		text-transform uppercase
+		background-color blue-btn
+		border-radius 25px
+		position relative
+		text-shadow 1px 1px 2px rgba(black, .8)
+		box-shadow inset 0 0 10px 1px rgba(black, .34)
+		cursor pointer
+		
+		&:hover
+			box-shadow inset 0 0 18px 1px rgba(black, .6)
+		
+		&:active
+			top 4px
+	
+	&__close
+		@extend $btn-reset
+		size 50px
+
+		position absolute
+		top -55px
+		right -55px
+		transform rotate(45deg)
+		cursor pointer
+		
+		&:before
+		&:after
+			@extend $pseudo
+			
+			width 46px
+			height 4px
+			background-color white
+			position absolute
+			top 50%
+			left 50%
+			
+		&:before
+			transform translate(-50%, -50%)
+		
+		&:after
+			transform translate(-50%, -50%) rotate(90deg)

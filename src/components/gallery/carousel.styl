@@ -2,7 +2,7 @@
 	position relative
 	
 	&__stage
-		min-height 240px
+		min-height 250px
 		position relative
 		perspective 100px
 		overflow hidden
@@ -67,7 +67,7 @@
 		}
 		thirdLeftOffsets = {
 			mobile : 50%
-			tablet : 50%
+			tablet : 7%
 			desktop: -5%
 		}
 		thirdRightOffsets = {
@@ -113,9 +113,6 @@
 				
 			&--third&--right
 				left thirdRightOffsets['desktop']
-			
-		
-
 
 	&__bg
 	&__inner
@@ -175,7 +172,7 @@
 		@extend $btn-reset, $abs
 		
 		top 50%
-		transform translate(-50%, -50%)
+		transform translateY(-50%)
 		padding 5px
 		cursor pointer
 		

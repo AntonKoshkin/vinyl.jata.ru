@@ -7,7 +7,7 @@ mixin price__column(mod, items)
 				li.price__item
 					span.price__text=item
 
-mixin price(color, title, subtitle, items)
+mixin price(color, title, subtitle, items, colNum)
 	.price(class='price--' + color)
 		.price__content
 			.price__header
@@ -18,4 +18,5 @@ mixin price(color, title, subtitle, items)
 			.price__body
 				+price__column('white', items[0])
 				+price__column('tall', items[1])
-				//- +price__column('mid', items[1])
+				if colNum > 2
+					+price__column('mid', items[1])

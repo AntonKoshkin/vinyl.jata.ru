@@ -1,10 +1,12 @@
 'use strict';
 
-import {Nav, Burger}	from '../components/header/header';
-import {map}			from '../components/map/map';
-import {cat}			from '../components/gallery/gallery';
-import {carousel}		from '../components/gallery/carousel';
-import {upBtn}			from '../components/index/up-btn';
+import {burger}	from '../components/header';
+import {carousel}	from '../components/gallery/carousel';
+import {cat}		from '../components/gallery/cat';
+import {map}		from '../components/map';
+import {modals}	from '../components/modals';
+import {nav}		from '../components/header';
+import {upBtn}		from '../components/index';
 
 const vynil = {
 	ready() {
@@ -15,15 +17,13 @@ const vynil = {
 		}
 	},
 	init() {
-		const nav = Nav();
-		const burger = Burger(nav);
-
 		upBtn.init();
-		nav.init();
 		burger.init();
+		nav.init();
 		cat.init();
 		carousel.init();
 		map.init();
+		modals.init();
 	},
 };
 

@@ -1,15 +1,9 @@
-const vars = {
-	production: 'environment' === 'production',
-	server    : '',
+const production = 'environment' === 'production';
+
+exports.vars = {
+	server: production ? 'https://vinyl.jata.ru' : 'http://vinyl.jata.ru',
 
 	api: {
-		becomeDriver: '/api/v1/accounts/becomedriver',
-		gallery     : '/api/v1/gallery',
-	},
-
-	init() {
-		this.server = this.production ? 'https://jata.ru' : 'http://dev.jata.ru';
+		callback: '/api/v1/accounts/becomedriver',
 	},
 };
-
-module.exports = vars;
