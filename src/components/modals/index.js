@@ -12,9 +12,9 @@ exports.modals = {
 			$('#callback-modal').addClass('callback--show');
 		});
 
-		$('body').on('click', '#callback-send', event => {
+		$('body').on('click', '#callback-send, #discount-send', event => {
 			event.preventDefault();
-			this.harvestData();
+			this.harvestData(event.target.id.split('-')[0]);
 		});
 
 		$(document).mouseup(event => {
