@@ -26,13 +26,13 @@ exports.modals = {
 
 		// discount
 		$('body').on('click', '.section__btn', () => {
-			$('#background').addClass('modal__bg--show');
-			$('#discount-modal').addClass('discount--show');
+			$('#background').fadeIn(300);
+			$('#discount-modal').fadeIn(300);
 		});
 
 		$('body').on('click', '#background, #discount-close', () => {
-			$('#background').removeClass('modal__bg--show');
-			$('#discount-modal').removeClass('discount--show');
+			$('#background').fadeOut(100);
+			$('#discount-modal').fadeOut(100);
 		});
 	},
 

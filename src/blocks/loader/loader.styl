@@ -1,0 +1,48 @@
+@keyframes frontWheelRotate
+	from
+		transform rotate(0)
+	
+	to
+		transform rotate(360deg)
+
+@keyframes backWheelRotate
+	from
+		transform rotate(0)
+	
+	to
+		transform rotate(-360deg)
+
+.loader
+	position fixed
+	top 0
+	left 0
+	width 100%
+	height 100%
+	background-color white
+	display flex
+	z-index 1000
+	display flex
+	justify-content center
+	align-items center
+	display none
+	
+	&__cogwheels
+		size 200px
+		position relative
+	
+	&__cogwheel
+		position absolute
+
+		&--front
+			size 172px
+
+			bottom 0
+			left 0
+			animation frontWheelRotate 4s linear infinite
+		
+		&--back
+			size 128px
+
+			top 0
+			right 0
+			animation backWheelRotate 4s linear infinite
