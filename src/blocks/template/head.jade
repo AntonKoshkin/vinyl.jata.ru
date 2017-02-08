@@ -1,7 +1,7 @@
 include ./links
 
 -var projectImg		= '/img/soc-img.jpg'
--var projectFavicon	= '/img/favicon.png'
+-var projectFavicon	= 'static/img/fav.ico'
 -var faviconSize		= 32
 -var themeColor		= '#4b5a6e'
 -var themeTitle		= 'vynil.jata.ru'
@@ -21,78 +21,78 @@ include ./links
 meta(charset='UTF-8')
 
 //- search engines
-meta(
+//- meta(
 	name='robots'
 	content='index,follow,noodp')
 
-meta(
+//- meta(
 	name='googlebot'
 	content='index,follow')
 
 //- Tells Google not to show the sitelinks search box
-meta(
+//- meta(
 	name='google'
 	content='nositelinkssearchbox')
 
 //- Tells Google not to provide a translation for this page
-meta(
+//- meta(
 	name='google'
 	content='notranslate')
 
 //- social tags
 //- Open Graph
-meta(
+//- meta(
 	property='og:url'
 	content=siteLink)
-meta(
+//- meta(
 	property='og:title'
 	content=siteTitle)
-meta(
+//- meta(
 	property='og:description'
 	content='')
-meta(
+//- meta(
 	property='og:site_name'
 	content=siteName)
-meta(
+//- meta(
 	property='og:image'
 	content=siteImg)
-meta(
+//- meta(
 	property='og:image:type'
 	content=siteImgType)
-meta(
+//- meta(
 	property='og:image:width'
 	content=siteImgWidth)
-meta(
+//- meta(
 	property='og:image:height'
 	content=siteImgHeight)
 
 //- Verify ownership for Google Search Console
-meta(
+//- meta(
 	name='google-site-verification'
 	content='verification_token')
 
 //- Short description of your site's subject
-meta(
+//- meta(
 	name='subject'
 	content='Рекламная площадка')
 
 //- Very short sentence describing the purpose of the website
-meta(
+//- meta(
 	name='abstract'
 	content='')
 
 //- Describes the topic of the website
-meta(
+//- meta(
 	name='topic'
 	content='')
 
 //- Brief summary of the company or purpose of the website
-meta(
+//- meta(
 	name='summary'
 	content='')
 
 //- Allows control over how referrer information is passed
-meta(
+//- meta(
 	name='referrer'
 	content='never')
 
@@ -105,13 +105,13 @@ meta(
 
 //-
 	i don't know what is it, but i think i need it
-meta(
+//- meta(
 	http-equiv='X-UA-Compatible'
 	content='IE=edge,chrome=1')
 
 //-
 	it says hand friendly. think i need it
-meta(
+//- meta(
 	name='HandheldFriendly'
 	content='true')
 
@@ -121,44 +121,43 @@ meta(
 	content=projectImg)
 
 //- favicon
-//- link(
-	rel='icon'
-	type='image/png'
-	sizes=faviconSize+'x'+faviconSize
+link(
+	rel='shortcut icon'
+	type='image/x-icon'
 	href=projectFavicon)
 
 //- CHROME, FF, OPERA - color of topbar
-meta(
+//- meta(
 	name='theme-color'
 	content=themeColor)
 
 //- IE, EDGE - title for app
-meta(
+//- meta(
 	name='application-name'
 	content=themeName)
 
 //- color of topbar in IE
-meta(
+//- meta(
 	name='msapplication-tooltip'
 	content=themeTitle)
 
 //- startup path
-meta(
+//- meta(
 	name='msapplication-starturl'
 	content='./')
 
 //- color of prev/next buttons in IE
-meta(
+//- meta(
 	name='msapplication-navbutton-color'
 	content=themeColor)
 
 //- SAFARI - web app in safari. something like that
-meta(
+//- meta(
 	name='apple-mobile-web-app-capable'
 	content='yes')
 
 //- nice transparent color on iphone
-meta(
+//- meta(
 	name='apple-mobile-web-app-status-bar-style'
 	content='black-translucent')
 
@@ -195,7 +194,7 @@ if needHTML5shiv
 	<![endif]-->
 
 //- flexbox polifill
-script(src=linkTo.static + 'js/flexbox-polifill.js')
+//- script(src=linkTo.static + 'js/flexbox-polifill.js')
 
 //- IE 10, 11 detecting
 //- <script>if(/*@cc_on!@*/false){document.documentElement.className+=' ie10';};if(top.VBArray){document.documentElement.className+=' ie11';}</script>
