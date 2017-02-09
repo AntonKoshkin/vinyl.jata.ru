@@ -14,9 +14,8 @@ module.exports = {
 				'src/compile/custom.js'
 			],
 			assets: [
-				'bower_components/jquery/dist/jquery.min.js',
-				'bower_components/masonry/dist/masonry.pkgd.min.js',
-				'bower_components/imagesloaded/imagesloaded.pkgd.min.js',
+				'node_modules/jquery/dist/jquery.min.js',
+				'src/blocks/loader/loader.js',
 				'src/assets/**/*.*'
 			],
 
@@ -54,8 +53,12 @@ module.exports = {
 		},
 
 		watch: {
-			assets: 'src/assets/**/*.*',
-			all   : 'src/**/*.*',
+			assets: [
+				'node_modules/jquery/dist/jquery.min.js',
+				'src/blocks/loader/loader.js',
+				'src/assets/**/*.*'
+			],
+			all: 'src/**/*.*',
 
 			img: [
 				'src/blocks/**/*.(jpg|png|svg)',

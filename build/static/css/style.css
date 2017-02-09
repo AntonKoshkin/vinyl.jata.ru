@@ -358,7 +358,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  display: none;
 }
 .loader__cogwheels {
   width: 200px;

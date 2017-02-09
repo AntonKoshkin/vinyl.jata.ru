@@ -6,9 +6,8 @@ const gulpIf	= require('gulp-if');
 
 module.exports = function() {
 	return function() {
-		var ifFileIsBc = function(file) {
-			// if (file.path.split('\\')[2] === 'bower_components') {
-			if (file.path.includes('bower_components')) {
+		var isJs = function(file) {
+			if (file.path.split('.').reverse()[0] === 'js') {
 				return true;
 			}
 
@@ -18,7 +17,7 @@ module.exports = function() {
 		return gulp
 			.src(config.pathTo.src.assets)
 			.pipe(gulpIf(
-				ifFileIsBc,
+				isJs,
 				gulp.dest(config.pathTo.build.assets.js),
 				gulp.dest(config.pathTo.build.assets.else)
 			));
