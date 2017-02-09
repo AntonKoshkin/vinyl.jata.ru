@@ -20,7 +20,7 @@
 	};
 	$(document).ready(function() {
 		$('<img />')
-			.attr('src', $('#promo-bg').css('background-image').slice(5, -2))
+			.attr('src', $('#promo-bg').css('background-image').split('"')[1])
 			.load(function() {
 				promoLoaded = true;
 				tryIt(promoLoaded, redTenonLoaded, blueTenonLoaded, carLoaded);
@@ -28,7 +28,7 @@
 			});
 
 		$('<img />')
-			.attr('src', $('.tenon--callback #tenon-bg').css('background-image').slice(5, -2))
+			.attr('src', $('.tenon--callback #tenon-bg').css('background-image').split('"')[1])
 			.load(function() {
 				redTenonLoaded = true;
 				tryIt(promoLoaded, redTenonLoaded, blueTenonLoaded, carLoaded);
@@ -36,7 +36,7 @@
 			});
 
 		$('<img />')
-			.attr('src', $('#car-bg').css('background-image').slice(5, -2))
+			.attr('src', $('#car-bg').css('background-image').split('"')[1])
 			.load(function() {
 				carLoaded = true;
 				tryIt(promoLoaded, redTenonLoaded, blueTenonLoaded, carLoaded);
@@ -44,7 +44,7 @@
 			});
 
 		$('<img />')
-			.attr('src', $('.tenon--address #tenon-bg').css('background-image').slice(5, -2))
+			.attr('src', $('.tenon--address #tenon-bg').css('background-image').split('"')[1])
 			.load(function() {
 				blueTenonLoaded = true;
 				tryIt(promoLoaded, redTenonLoaded, blueTenonLoaded, carLoaded);

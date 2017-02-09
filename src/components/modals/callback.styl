@@ -62,3 +62,30 @@ btn-color = #a92021
 		text-shadow 2px 2px 2px rgba(black, .6)
 		box-shadow inset 0 0 9px rgba(black, .34),
 			3px 3px 9px rgba(black .8)
+	
+	&__close
+		@extend $btn-reset
+		size 35px
+
+		position absolute
+		top -30px
+		right -30px
+		transform rotate(45deg)
+		cursor pointer
+		
+		&:before
+		&:after
+			@extend $pseudo
+			
+			width 27px
+			height 3px
+			background-color white
+			position absolute
+			top 50%
+			left 50%
+			
+		&:before
+			transform translate(-50%, -50%)
+		
+		&:after
+			transform translate(-50%, -50%) rotate(90deg)

@@ -4,6 +4,7 @@ exports.vars = {
 	server: production ? 'https://vinyl.jata.ru' : 'http://vinyl.jata.ru',
 
 	api: {
-		callback: '/api/v1/accounts/becomedriver',
+		feedback: '/api/v1/feedback/',
+		gallery : '/api/v1/gallery/',
 	},
 };

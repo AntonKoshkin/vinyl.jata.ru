@@ -230,6 +230,7 @@ input[type=number]::-webkit-outer-spin-button {
 .burger,
 .up-btn,
 .callback__btn,
+.callback__close,
 .discount__btn,
 .discount__close {
   padding: 0;
@@ -314,6 +315,8 @@ input[type=number]::-webkit-outer-spin-button {
 .cat__item--active .cat__text:after,
 .burger__strip:before,
 .burger__strip:after,
+.callback__close:before,
+.callback__close:after,
 .discount__btn-wrapper:before,
 .discount__close:before,
 .discount__close:after {
@@ -2216,8 +2219,8 @@ body {
 }
 .up-btn {
   position: fixed;
-  bottom: 300px;
-  right: 20px;
+  bottom: 100px;
+  right: 70px;
   opacity: 0;
   visibility: hidden;
   -webkit-transition: all 0.3s;
@@ -2322,6 +2325,36 @@ body {
   cursor: pointer;
   text-shadow: 2px 2px 2px rgba(0,0,0,0.6);
   box-shadow: inset 0 0 9px rgba(0,0,0,0.34), 3px 3px 9px rgba(0,0,0,0.8);
+}
+.callback__close {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+  cursor: pointer;
+}
+.callback__close:before,
+.callback__close:after {
+  width: 27px;
+  height: 3px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.callback__close:before {
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.callback__close:after {
+  -webkit-transform: translate(-50%, -50%) rotate(90deg);
+      -ms-transform: translate(-50%, -50%) rotate(90deg);
+          transform: translate(-50%, -50%) rotate(90deg);
 }
 .discount {
   position: fixed;
