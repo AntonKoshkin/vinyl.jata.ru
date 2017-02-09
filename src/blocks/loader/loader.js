@@ -16,6 +16,9 @@
 		}
 		if (allLoaded) {
 			$('#loader').fadeOut(500);
+			$('body')
+				.removeClass('no-vis')
+				.removeClass('no-scroll');
 		}
 	};
 	$(document).ready(function() {

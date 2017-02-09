@@ -6,8 +6,8 @@ section.gallery#gallery
 	.gallery__content
 		+title(2, 'blue')(class='gallery__title')
 			| Галерея
-		ul.cat.cat--hidden
-			each cat, i in categories
+		ul.cat
+			//- each cat, i in categories
 				if i === 0
 					li.cat__item.cat__item--active
 						span.cat__text(title=cat)=cat

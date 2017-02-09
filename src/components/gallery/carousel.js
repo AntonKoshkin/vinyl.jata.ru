@@ -1,6 +1,9 @@
 /* global $ */
 
+import {vars} from '../../compile/vars';
+
 const carousel = {
+	data   : null,
 	stage  : null,
 	images : null,
 	items  : null,
@@ -13,73 +16,61 @@ const carousel = {
 		end  : null,
 	},
 
-
 	init() {
 		this.stage = document.getElementById('stage');
 
-		this.getImages();
-		this.makeItems();
-		this.items = $('.carousel__item');
-		this.findSecondsAndThirds();
-		this.addClassesToItems();
-
-		$('body').on('click', '.carousel__btn--next', () => {
-			this.change('next');
-		});
-		$('body').on('click', '.carousel__btn--prev', () => {
-			this.change('prev');
+		this.getImages(data => {
+			this.makeCategories(data);
+			this.changeCategory(data[0].id);
 		});
 
-		this.stage.addEventListener('touchstart', this.onTouchStart, false);
+		this.setEventHandlers();
 	},
 
-	onTouchStart(event) {
-		carousel.touch.start = event.changedTouches[0].clientX;
-		carousel.stage.addEventListener('touchmove', carousel.onTouchMove, false);
-	},
-
-	onTouchMove(event) {
-		carousel.touch.end = event.changedTouches[0].clientX;
-
-		if (carousel.touch.start < carousel.touch.end) {
-			carousel.change('prev');
-		} else {
-			carousel.change('next');
-		}
-
-		carousel.stage.removeEventListener('touchmove', carousel.onTouchMove, false);
-	},
-
-	onTouchEnd(event) {
-		console.log(event.changedTouches[0]);
-	},
-
-	getImages() {
-		let images = [];
-		[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].forEach(item => {
-			images.push({
-				thumb: 'http://placehold.it/300x300&text=' + item,
-				large: 'http://placehold.it/800x800&text=' + item,
-			});
+	getImages(cb) {
+		$.ajax({
+			url : vars.server + vars.api.gallery,
+			type: 'GET',
+		})
+		.done(result => {
+			this.data = result;
+			cb(result, this);
+		})
+		.fail(error => {
+			console.log('gallery', error);
 		});
-		this.images = images;
 	},
 
-	makeItems() {
+	makeCategories(data) {
+		data.forEach(item => {
+			if (item.photos.length >= 5) {
+				$('.cat').append(`
+					<li class='cat__item' data-cat-id='${item.id}'>
+						<span class='cat__text' title='${item.name}'>${item.name}</span>
+					</li>
+				`);
+			}
+		});
+	},
+
+	makeItems(category) {
 		$('.carousel__stage').empty();
-		this.images.forEach(item => {
+		category.photos.forEach(item => {
 			$('.carousel__stage').append(`
-				<div class='carousel__item carousel__item--back'>
+				<div class='carousel__item carousel__item--back' data-img-id='${item.id}'>
 					<div class='carousel__bg'>
 						<div class='carousel__inner'></div>
 					</div>
 					<div class='carousel__img'>
-						<div class='carousel__inner' style='background-image: url(${item.thumb})'></div>
+						<div
+							class='carousel__inner'
+							data-bg='url("${vars.server + item.small_pic}"'></div>
 					</div>
 				</div>
 			`);
 		});
 	},
+	// style='background-image: url(${vars.server + item.small_pic})'
 
 	findSecondsAndThirds() {
 		const lastItemIndex = this.items.length - 1;
@@ -139,6 +130,12 @@ const carousel = {
 		}
 	},
 
+	makeBg(item) {
+		const newElem = $(item).find('.carousel__img .carousel__inner');
+		newElem
+			.attr('style', `background-image: ${newElem.attr('data-bg')}`);
+	},
+
 	addClassesToItems() {
 		this.items.each((index, elem) => {
 			switch (index) {
@@ -150,6 +147,8 @@ const carousel = {
 						.removeClass('carousel__item--left')
 						.removeClass('carousel__item--right')
 						.addClass('carousel__item--active');
+
+					this.makeBg(elem);
 					break;
 				case this.seconds[0]:
 					$(elem)
@@ -159,6 +158,8 @@ const carousel = {
 						.removeClass('carousel__item--active')
 						.addClass('carousel__item--left')
 						.addClass('carousel__item--second');
+
+					this.makeBg(elem);
 					break;
 				case this.seconds[1]:
 					$(elem)
@@ -168,6 +169,8 @@ const carousel = {
 						.removeClass('carousel__item--active')
 						.addClass('carousel__item--right')
 						.addClass('carousel__item--second');
+
+					this.makeBg(elem);
 					break;
 				case this.thirds[0]:
 					$(elem)
@@ -177,6 +180,8 @@ const carousel = {
 						.removeClass('carousel__item--active')
 						.addClass('carousel__item--left')
 						.addClass('carousel__item--third');
+
+					this.makeBg(elem);
 					break;
 				case this.thirds[1]:
 					$(elem)
@@ -186,6 +191,8 @@ const carousel = {
 						.removeClass('carousel__item--active')
 						.addClass('carousel__item--right')
 						.addClass('carousel__item--third');
+
+					this.makeBg(elem);
 					break;
 				default:
 					$(elem)
@@ -200,7 +207,7 @@ const carousel = {
 		});
 	},
 
-	change(way) {
+	changeImage(way) {
 		switch (way) {
 			case 'next':
 				if (this.first === this.items.length - 1) {
@@ -220,6 +227,93 @@ const carousel = {
 		}
 		this.findSecondsAndThirds();
 		this.addClassesToItems();
+	},
+
+	changeCategory(catId) {
+		let activeCategory = this.data.filter(cat => cat.id === catId)[0];
+
+		$('.carousel__stage').animate({opacity: 0}, 100);
+		setTimeout(() => {
+			this.setActiveCategory(catId);
+			// this.makeItems(this.data[id].photos);
+			this.makeItems(activeCategory);
+			this.items = $('.carousel__item');
+			this.changeImage();
+			$('.carousel__stage').animate({opacity: 1}, 100);
+		}, 100);
+	},
+
+	setActiveCategory(n) {
+		$(`[data-cat-id='${n}']`)
+			.addClass('cat__item--active')
+			.siblings()
+			.removeClass('cat__item--active');
+	},
+
+	setEventHandlers() {
+		const thisObj = this;
+		$('body').on('click', '.carousel__btn--next', () => {
+			this.changeImage('next');
+		});
+		$('body').on('click', '.carousel__btn--prev', () => {
+			this.changeImage('prev');
+		});
+		$('body').on('click', '.cat__item', function(event) {
+			event.preventDefault();
+
+			let categoryIdtoActivate = Number($(this).attr('data-cat-id'));
+
+			thisObj.changeCategory(categoryIdtoActivate);
+		});
+
+		this.stage.addEventListener('touchstart', this.onTouchStart, false);
+
+		$('body').on('click', '.carousel__item--active', () => {
+			this.openImage();
+			$('#photo-modal, #background').fadeIn(300);
+		});
+
+		$('body').on('click', '#photo-modal', () => $('#photo-modal, #background').fadeOut(100));
+	},
+
+	onTouchStart(event) {
+		carousel.touch.start = event.changedTouches[0].clientX;
+		carousel.stage.addEventListener('touchmove', carousel.onTouchMove, false);
+	},
+
+	onTouchMove(event) {
+		carousel.touch.end = event.changedTouches[0].clientX;
+
+		if (carousel.touch.start < carousel.touch.end) {
+			carousel.change('prev');
+		} else {
+			carousel.change('next');
+		}
+
+		carousel.stage.removeEventListener('touchmove', carousel.onTouchMove, false);
+	},
+
+	onTouchEnd(event) {
+		console.log(event.changedTouches[0]);
+	},
+
+	openImage() {
+		let catId = Number($('.cat__item--active').attr('data-cat-id'));
+		let imgId = Number($('.carousel__item--active').attr('data-img-id'));
+
+		let url;
+
+		this.data.forEach(cat => {
+			if (cat.id === catId) {
+				cat.photos.forEach(img => {
+					if (img.id === imgId) {
+						url = vars.server + img.pic;
+					}
+				});
+			}
+		});
+
+		$('#photo-img').attr('style', `background-image: url(${url})`);
 	},
 };
 

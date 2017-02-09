@@ -31,6 +31,7 @@ exports.modals = {
 		// discount
 		// open
 		$('body').on('click', '.section__btn', () => {
+			$('body').addClass('no-scroll');
 			$('#background').fadeIn(300);
 			$('#discount-modal').fadeIn(300);
 		});
@@ -39,6 +40,7 @@ exports.modals = {
 		$('body').on('click', '#background, #discount-close, #discount-send', () => {
 			$('#background').fadeOut(100);
 			$('#discount-modal').fadeOut(100);
+			$('body').removeClass('no-scroll');
 		});
 
 		// click for sending data
@@ -56,8 +58,7 @@ exports.modals = {
 		if (name && phone) {
 			this.sendForm({name, phone, type_form}, vars.api.feedback)
 				.then(
-					result => {
-						console.log(formName, result)
+					() => {
 						$(`#${formName}-name`).val('');
 						$(`#${formName}-tel`).val('');
 

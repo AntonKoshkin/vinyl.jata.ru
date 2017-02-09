@@ -7,7 +7,7 @@
 		<meta name="format-detection" content="telephone=no"/>
 		<link rel="stylesheet" href="/static/css/style.css"/>
 	</head>
-	<body class="vynil">
+	<body class="vynil no-scroll no-vis">
 		<header class="header">
 			<div class="header__lines">
 				<div class="header__line header__line--black"></div>
@@ -528,12 +528,7 @@
 									<h2 class="title__text">Галерея
 									</h2>
 								</div>
-					<ul class="cat cat--hidden">
-						<li class="cat__item cat__item--active"><span title="Эффект панорманой крыши" class="cat__text">Эффект панорманой крыши</span></li>
-						<li class="cat__item"><span title="Антигравийная пленка" class="cat__text">Антигравийная пленка</span></li>
-						<li class="cat__item"><span title="Оклейка кузова целиком" class="cat__text">Оклейка кузова целиком</span></li>
-						<li class="cat__item"><span title="Винилография" class="cat__text">Винилография</span></li>
-						<li class="cat__item"><span title="Частичная оклейка кузова" class="cat__text">Частичная оклейка кузова</span></li>
+					<ul class="cat">
 					</ul>
 					<div class="carousel">
 						<div id="stage" class="carousel__stage"></div>
@@ -673,6 +668,9 @@
 					</g>
 				</svg>
 			</button>
+			<div id="photo-modal" style="display: none" class="photo">
+				<div id="photo-img" class="photo__img"></div>
+			</div>
 		</div>
 					<button class="tenon tenon--callback tenon--show" id="callback-btn">
 						<div class="tenon__shadow"></div>
