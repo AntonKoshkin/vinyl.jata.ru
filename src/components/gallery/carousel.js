@@ -231,6 +231,7 @@ const carousel = {
 
 	changeCategory(catId) {
 		let activeCategory = this.data.filter(cat => cat.id === catId)[0];
+		this.first = 0;
 
 		$('.carousel__stage').animate({opacity: 0}, 100);
 		setTimeout(() => {
