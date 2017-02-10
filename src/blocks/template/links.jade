@@ -5,13 +5,13 @@
 -linkTo.fb	= 'facebook.com/groups/157503494655426/'
 -linkTo.ig	= 'instagram.com/jata.ru/'
 
--linkTo.root = production ? 'https://vynil.jata.ru' : 'localhost:7777/'
+-linkTo.root = 'https://vynil.jata.ru'
 
 -phone		= {}
--phone.read	= '8 (812) 274 13 38'
--phone.call	= '+78122741338'
+-phone.read	= production ? '{{ info.phone }}' : '8 (812) 274 13 38'
+-phone.call	= production ? '{{ info.phone_link }}' : '+78122741338'
 
--address = 'СПб, Суворовский пр., д. 65Б, офис 16'
+-address = production ? '{{ info.address }}' : 'СПб, Кременчугская ул., д.8'
 
 -workingTime = ['10:00', '19:00']
 

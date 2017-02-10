@@ -1,6 +1,6 @@
 include ../template/links
 
-mixin section(name, prices)
+mixin section(name, prices, forPython)
 	section.section(class='section--' + name)
 		.section__body
 			.section__content
@@ -19,11 +19,23 @@ mixin section(name, prices)
 				.section__line.section__line--black
 			.section__content
 				h3.section__foot-title Стоимость
-				.section__prices
-					for price in prices
-						p.section__price
-							=price[0]
-							br
-							| от 
-							b=price[1]
-							|  руб.
+				if production
+					.section__prices.
+						{% if #{name} %}
+							{% for price in #{name} %}
+								<p class="section__price">
+									{{ price.category.name }}
+									<br/>
+									от <b>{{ price.value }}</b> руб.
+								</p>
+							{% endfor %}
+						{% endif %}
+				else
+					.section__prices
+						for price in prices
+							p.section__price
+								=price[0]
+								br
+								| от 
+								b=price[1]
+								|  руб.
