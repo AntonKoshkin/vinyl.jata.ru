@@ -6,6 +6,10 @@
 	background-size cover
 	position relative
 	overflow-x hidden
+	margin-bottom -70px
+	
+	@media (min-width desktop)
+		margin-bottom -100px
 	
 	&:before
 		content ''
@@ -13,10 +17,16 @@
 		bottom 0
 		left 0
 		width 100%
-		border-top 1px solid transparent
-		border-right round(1190%/1920*100) solid #000
+		border-right 62vw solid white
 		border-bottom none
-		border-left round(100% - (1190%/1920*100)) solid #000
+		border-left 38vw solid white
+		border-top 30px solid transparent
+		
+		@media (min-width tablet)
+			border-top 60px solid transparent
+		
+		@media (min-width desktop)
+			border-top 111px solid transparent
 
 	&__content
 		container()

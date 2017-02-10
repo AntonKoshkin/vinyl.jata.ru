@@ -12,6 +12,23 @@ btn-face-blue = #228dcb
 	
 	&--antigrav
 		background-image url(pathToStatic + '/img/section__bg--antigrav.jpg')
+		
+		&:before
+			content ''
+			position absolute
+			top -3px
+			left 0
+			width 100%
+			border-left 62vw solid white
+			border-top 4px solid white
+			border-right 38vw solid white
+			border-bottom 30px solid transparent
+			
+			@media (min-width tablet)
+				border-bottom 60px solid transparent
+			
+			@media (min-width desktop)
+				border-bottom 111px solid transparent
 	
 	&--branding
 		background-image url(pathToStatic + '/img/section__bg--branding.jpg')
