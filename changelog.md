@@ -11,6 +11,6 @@ nothing is here
 3.2.17 - about 4h
 6.2.17 - about 7h
 8.2.17 - about 4h
-9.2.17 - 9.30 - 12.00, 12.30 - 
+9.2.17 - about 8h
 
-total 41h
+total 49h
