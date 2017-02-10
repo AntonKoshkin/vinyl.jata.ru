@@ -233,15 +233,15 @@ const carousel = {
 		let activeCategory = this.data.filter(cat => cat.id === catId)[0];
 		this.first = 0;
 
-		$('.carousel__stage').animate({opacity: 0}, 100);
+		$('.carousel__stage').animate({opacity: 0}, 200);
 		setTimeout(() => {
 			this.setActiveCategory(catId);
 			// this.makeItems(this.data[id].photos);
 			this.makeItems(activeCategory);
 			this.items = $('.carousel__item');
 			this.changeImage();
-			$('.carousel__stage').animate({opacity: 1}, 100);
-		}, 100);
+			$('.carousel__stage').animate({opacity: 1}, 200);
+		}, 200);
 	},
 
 	setActiveCategory(n) {
