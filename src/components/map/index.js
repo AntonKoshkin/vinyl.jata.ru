@@ -9,6 +9,10 @@ exports.map = {
 			coords: [59.92010856, 30.37295600],
 			name  : 'Бокс для оклейки',
 			title : 'СПб, Кременчугская ул., д.8',
+			il    : 'default#image',
+			iih   : '/static/img/map__pin.svg',
+			iis   : [36, 48],
+			iio   : [-18, -48],
 		}
 	],
 
@@ -44,10 +48,10 @@ exports.map = {
 				hintContent   : markParams.name,
 				balloonContent: markParams.title,
 			}, {
-				iconLayout     : 'default#image',
-				iconImageHref  : '/static/img/map__pin.svg',
-				iconImageSize  : [36, 51],
-				iconImageOffset: [-18, -51],
+				iconLayout     : markParams.il,
+				iconImageHref  : markParams.iih,
+				iconImageSize  : markParams.iis,
+				iconImageOffset: markParams.iio,
 			}
 		);
 		this.marks.push(mark);

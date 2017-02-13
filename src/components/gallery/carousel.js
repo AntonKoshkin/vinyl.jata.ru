@@ -64,7 +64,7 @@ const carousel = {
 					<div class='carousel__img'>
 						<div
 							class='carousel__inner'
-							data-bg='url("${vars.server + item.small_pic}"'></div>
+							data-bg='url("${vars.server + item.small_pic}")'></div>
 					</div>
 				</div>
 			`);

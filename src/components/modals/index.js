@@ -17,15 +17,13 @@ exports.modals = {
 		// click not on modal
 		$(document).mouseup(event => {
 			if (!$('#callback-modal').is(event.target) && !$('#callback-modal').has(event.target).length) {
-				$('#callback-btn').addClass('tenon--show');
-				$('#callback-modal').removeClass('callback--show');
+				this.closeForm('callback');
 			}
 		});
 
 		// click on close btn
 		$('body').on('click', '#background, #callback-close', () => {
-			$('#callback-btn').addClass('tenon--show');
-			$('#callback-modal').removeClass('callback--show');
+			this.closeForm('callback');
 		});
 
 		// discount
@@ -37,10 +35,8 @@ exports.modals = {
 		});
 
 		// close
-		$('body').on('click', '#background, #discount-close, #discount-send', () => {
-			$('#background').fadeOut(100);
-			$('#discount-modal').fadeOut(100);
-			$('body').removeClass('no-scroll');
+		$('body').on('click', '#background, #discount-close', () => {
+			this.closeForm('discount');
 		});
 
 		// click for sending data
@@ -50,52 +46,38 @@ exports.modals = {
 		});
 	},
 
+	closeForm(formName) {
+		switch (formName) {
+			case 'callback':
+				$('#callback-btn').addClass('tenon--show');
+				$('#callback-modal').removeClass('callback--show');
+				break;
+			case 'discount':
+				$('#background').fadeOut(100);
+				$('#discount-modal').fadeOut(100);
+				$('body').removeClass('no-scroll');
+				break;
+			// skip default
+		}
+	},
+
 	harvestData(formName) {
 		let name = $(`#${formName}-name`).val();
 		let phone = $(`#${formName}-tel`).val();
 		let type_form = formName; // eslint-disable-line
 
 		if (name && phone) {
-			this.sendForm({name, phone, type_form}, vars.api.feedback)
-				.then(
-					() => {
-						$(`#${formName}-name`).val('');
-						$(`#${formName}-tel`).val('');
-
-						switch (formName) {
-							case 'callback':
-								$('#callback-btn').addClass('tenon--show');
-								$('#callback-modal').removeClass('callback--show');
-								break;
-							case 'discount':
-								$('#discount-modal').removeClass('discount--show');
-								$('#background').removeClass('modal__bg--show');
-								break;
-							// skip default
-						}
-					},
-					error => console.log('error', error)
-				);
+			$.ajax({
+				url : vars.server + vars.api.feedback,
+				type: 'POST',
+				data: {name, phone, type_form},
+			})
+			.done(() => {
+				$(`#${formName}-name`).val('');
+				$(`#${formName}-tel`).val('');
+				this.closeForm(formName);
+			})
+			.fail(error => console.log('error', error));
 		}
-	},
-
-	sendForm(data, apiUrl) {
-		return new Promise((result, error) => {
-			let request = new XMLHttpRequest();
-			request.open('POST', vars.server + apiUrl);
-			request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-			request.onload = () => {
-				if (request.status === 200) {
-					result(JSON.parse(request.response));
-				} else {
-					error(Error('server is stupid as: ' + request.statusText));
-				}
-			};
-			request.onerror = () => {
-				error(Error('server is drunk'));
-			};
-
-			request.send(JSON.stringify(data));
-		});
 	},
 };

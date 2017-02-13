@@ -83,13 +83,25 @@
 	&__car
 		// width 480px
 		// height 160px
-		width 100%
+		// width 100%
+		// padding-bottom 33%
 		background-image url(pathToStatic + 'img/promo__car.png')
 		background-position center
 		background-size contain
 		background-repeat no-repeat
-		padding-bottom 33%
 		position relative
+		width 480px
+		height round(@width / 3)
+		
+		@media (min-width tablet)
+			width 720px
+			height round(@width / 3)
+		
+		@media (min-width desktop)
+			width 1090px
+			height round(@width / 3)
+			margin-right auto
+			margin-left auto
 	
 	@media (min-width tablet)
 		&__text
@@ -110,8 +122,3 @@
 		&__title
 			margin-left 60px
 			margin-bottom -35px
-			
-		&__car
-			width 1090px
-			margin-right auto
-			margin-left auto

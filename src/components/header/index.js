@@ -1,37 +1,20 @@
 /* global $ */
 
-exports.nav = {
+const burger = {
 	init() {
-		$("a[href^='#']").on('click', function(event) {
-			const point = $(this).attr('href');
-			$('html,body')
-				.stop()
-				.animate(
-					{scrollTop: $(point).offset().top},
-					1000
-				);
-
-			event.preventDefault();
-		});
-	},
-};
-
-exports.burger = {
-	init() {
-		$('body').on('click', '#burger', event => {
-			event.preventDefault();
-
+		$('body').on('click', '#burger', () => {
 			this.toggle();
 		});
 
 		$('a[href^="#"]').on('click', function(event) {
+			event.preventDefault();
 			$('html,body')
 				.stop()
 				.animate(
 					{scrollTop: $($(this).attr('href')).offset().top},
 					1000
 			);
-			event.preventDefault();
+			$('#nav').removeClass('nav--hidden');
 		});
 	},
 
@@ -39,3 +22,5 @@ exports.burger = {
 		$('#nav').toggleClass('nav--hidden');
 	},
 };
+
+exports.burger = burger;

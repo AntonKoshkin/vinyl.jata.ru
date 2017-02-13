@@ -16,11 +16,11 @@ btn-face-blue = #228dcb
 		&:before
 			content ''
 			position absolute
-			top -3px
+			top -8px
 			left 0
 			width 100%
 			border-left 62vw solid white
-			border-top 4px solid white
+			border-top 8px solid white
 			border-right 38vw solid white
 			border-bottom 30px solid transparent
 			
@@ -370,11 +370,12 @@ btn-face-blue = #228dcb
 			width 200%
 			height 100%
 			transform translateX(-50%)
+			display flex
 
 		&__line
 			opacity .6
-			position absolute
-			top 0
+			// position absolute
+			// top 0
 			height 100%
 			transform skewX(20deg)
 
@@ -383,21 +384,25 @@ btn-face-blue = #228dcb
 				background-color red
 				
 				.section:nth-child(odd) &
-					left 0
+					//	left 0
+					order 1
 				
 				.section:nth-child(even) &
 					background-color blue
-					right 0
+					order 2
+					// right 0
 			
 			&--black
 				width calc(50% + 347px)
 				background-color black
 				
 				.section:nth-child(odd) &
-					right 0
+					order 2
+					//	right 0
 				
 				.section:nth-child(even) &
-					left 0
+					order 1
+					// left 0
 				
 		
 		&__foot-title

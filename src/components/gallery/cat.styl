@@ -35,6 +35,9 @@
 		
 		@media (max-width (tablet - 1))
 			&:nth-child(odd)
+				&:last-child
+					text-align center
+
 				&:not(:last-child)
 					text-align right
 					padding-right 36px
@@ -42,9 +45,6 @@
 				
 					&:after
 						display inline-block
-		
-			&:last-child
-				text-align center
 		
 		@media (min-width tablet)
 			@media (max-width desktop - 1)
