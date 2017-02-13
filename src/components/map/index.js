@@ -47,7 +47,7 @@ exports.map = {
 				iconLayout     : 'default#image',
 				iconImageHref  : '/static/img/map__pin.svg',
 				iconImageSize  : [36, 51],
-				iconImageOffset: [-18, -51]
+				iconImageOffset: [-18, -51],
 			}
 		);
 		this.marks.push(mark);

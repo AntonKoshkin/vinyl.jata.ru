@@ -286,9 +286,9 @@ const carousel = {
 		carousel.touch.end = event.changedTouches[0].clientX;
 
 		if (carousel.touch.start < carousel.touch.end) {
-			carousel.change('prev');
+			carousel.changeImage('prev');
 		} else {
-			carousel.change('next');
+			carousel.changeImage('next');
 		}
 
 		carousel.stage.removeEventListener('touchmove', carousel.onTouchMove, false);
