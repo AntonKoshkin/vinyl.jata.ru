@@ -744,6 +744,7 @@ body {
 }
 .section--antigrav {
   background-image: url("/static//img/section__bg--antigrav.jpg");
+  overflow-x: hidden;
 }
 .section--antigrav:before {
   content: '';
@@ -2772,3 +2773,5 @@ body {
     margin-bottom: -35px;
   }
 }
+
+/*# sourceMappingURL=style.css.map */
