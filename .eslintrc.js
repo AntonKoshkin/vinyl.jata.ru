@@ -31,6 +31,7 @@ module.exports = {
 		"object-curly-spacing": ["error", "never"],
 		"space-before-function-paren": ["error", "never"],
 		"no-plusplus": "off",
-		"no-restricted-syntax": ["error", "WithStatement"]
+		"no-restricted-syntax": ["error", "WithStatement"],
+		"linebreak-style": "off"
 	},
 }

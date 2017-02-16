@@ -5,8 +5,8 @@
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "NODE_ENV=development gulp",
-    "build": "NODE_ENV=production gulp"
+    "start": "set NODE_ENV=development && gulp",
+    "build": "set NODE_ENV=production && gulp"
   },
   "repository": {
     "type": "git",
