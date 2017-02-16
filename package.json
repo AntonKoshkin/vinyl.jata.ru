@@ -1,12 +1,13 @@
 {
-  "name": "one-more-builder",
-  "version": "1.0.2",
-  "description": "good frontend builder",
+  "name": "vinyl.jata.ru",
+  "version": "1.0.3",
+  "description": "landing",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "set NODE_ENV=development && gulp",
-    "build": "set NODE_ENV=production && gulp"
+    "preinstall": "npm i -g cross-env",
+    "start": "cross-env NODE_ENV=development gulp",
+    "build": "cross-env NODE_ENV=production gulp"
   },
   "repository": {
     "type": "git",
