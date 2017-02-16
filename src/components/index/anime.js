@@ -4,7 +4,7 @@ exports.anime = {
 	fadeInItems: null,
 
 	init() {
-		this.fadeInItems = $('.feature, .section__face, .price__column');
+		this.fadeInItems = $('.section__face, .price__column');
 		this.fadeInItems.css('opacity', 0);
 
 		$(window).scroll(() => {
