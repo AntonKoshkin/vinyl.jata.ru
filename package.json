@@ -1,6 +1,6 @@
 {
   "name": "vinyl.jata.ru",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "landing",
   "main": "gulpfile.js",
   "scripts": {
