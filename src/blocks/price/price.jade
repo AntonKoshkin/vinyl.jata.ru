@@ -3,7 +3,13 @@ include ../template/links
 mixin price__column(mod, items, name, num)
 	.price__column(class='price__column--' + mod)
 		if mod !== 'white'
-			p.price__col-title Стоимость
+			p.price__col-title
+				if mod === 'tall'
+					| KPMF, ORACAL, HEXIS (ПВХ пленки)
+				if mod === 'mid'
+					| HEXIS, 3M (полиуретановые пленки)
+				//- else
+					| Стоимость
 
 		if production
 			ul.price__items.
