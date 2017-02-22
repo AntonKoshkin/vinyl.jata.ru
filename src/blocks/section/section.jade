@@ -1,6 +1,6 @@
 include ../template/links
 
-mixin section(name, prices, forPython)
+mixin section(name, prices)
 	section.section(class='section--' + name)
 		.section__body
 			.section__content
@@ -21,8 +21,8 @@ mixin section(name, prices, forPython)
 				h3.section__foot-title Стоимость
 				if production
 					.section__prices.
-						{% if #{name} %}
-							{% for price in #{name} %}
+						{% if #{name === 'vynil' ? 'vinyl' : name} %}
+							{% for price in #{name === 'vynil' ? 'vinyl' : name} %}
 								<p class="section__price">
 									{{ price.category.name }}
 									<br/>

@@ -16,7 +16,9 @@ exports.modals = {
 		// close
 		// click not on modal
 		$(document).mouseup(event => {
-			if (!$('#callback-modal').is(event.target) && !$('#callback-modal').has(event.target).length) {
+			if (!$('#callback-modal').is(event.target) &&
+				!$('#callback-modal').has(event.target).length
+			) {
 				this.closeForm('callback');
 			}
 		});
@@ -29,7 +31,7 @@ exports.modals = {
 		// discount
 		// open
 		$('body').on('click', '.section__btn', () => {
-			$('body').addClass('no-scroll');
+			// $('body').addClass('no-scroll');
 			$('#background').fadeIn(300);
 			$('#discount-modal').fadeIn(300);
 		});
@@ -55,7 +57,7 @@ exports.modals = {
 			case 'discount':
 				$('#background').fadeOut(100);
 				$('#discount-modal').fadeOut(100);
-				$('body').removeClass('no-scroll');
+				// $('body').removeClass('no-scroll');
 				break;
 			// skip default
 		}

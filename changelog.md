@@ -1,3 +1,2 @@
-nothing is here
-
-total time - about 57h
+1.0.6
+	запрещен перенос текста в номере телефона
