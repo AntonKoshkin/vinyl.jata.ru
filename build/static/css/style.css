@@ -468,6 +468,7 @@ body {
 }
 .phone__text {
   font-size: 1rem;
+  white-space: nowrap;
 }
 .header .phone__text {
   color: #fefefe;
@@ -2773,3 +2774,5 @@ body {
     margin-bottom: -35px;
   }
 }
+
+/*# sourceMappingURL=style.css.map */
