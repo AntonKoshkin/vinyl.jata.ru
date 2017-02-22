@@ -1,0 +1,23 @@
+.cross-btn
+	@extend $btn-reset
+	size 50px
+
+	transform rotate(45deg)
+	cursor pointer
+	
+	&:before
+	&:after
+		@extend $pseudo
+		
+		width 46px
+		height 4px
+		background-color white
+		position absolute
+		top 50%
+		left 50%
+		
+	&:before
+		transform translate(-50%, -50%)
+	
+	&:after
+		transform translate(-50%, -50%) rotate(90deg)

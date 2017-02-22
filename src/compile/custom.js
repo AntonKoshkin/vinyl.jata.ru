@@ -26,7 +26,7 @@ const vynil = {
 		burger.init();
 		carousel.init();
 		map.init();
-		modals.init();
+		modals(carousel).init();
 
 		if (navigator.userAgent.toLowerCase().includes('safari')) {
 			$('#loader').fadeOut(500);

@@ -1,3 +1,5 @@
+include ../../blocks/arrow-btn/arrow-btn
+include ../../blocks/cross-btn/cross-btn
 include ../../blocks/loader/loader
 
 .modals
@@ -60,3 +62,6 @@ include ../../blocks/loader/loader
 
 	.photo#photo-modal(style='display: none')
 		.photo__img#photo-img
+			+crossBtn.photo__close#photo-btn--close
+			+arrowBtn('prev').photo__btn.photo__btn--prev#photo-btn--prev
+			+arrowBtn('next').photo__btn.photo__btn--next#photo-btn--next

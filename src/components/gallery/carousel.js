@@ -253,10 +253,10 @@ const carousel = {
 
 	setEventHandlers() {
 		const thisObj = this;
-		$('body').on('click', '.carousel__btn--next', () => {
+		$('body').on('click', '#carousel-btn--next', () => {
 			this.changeImage('next');
 		});
-		$('body').on('click', '.carousel__btn--prev', () => {
+		$('body').on('click', '#carousel-btn--prev', () => {
 			this.changeImage('prev');
 		});
 		$('body').on('click', '.cat__item', function(event) {
@@ -274,7 +274,8 @@ const carousel = {
 			$('#photo-modal, #background').fadeIn(300);
 		});
 
-		$('body').on('click', '#photo-modal', () => $('#photo-modal, #background').fadeOut(100));
+		// $('body').on('click', '#photo-modal', () => $('#photo-modal, #background').fadeOut(100));
+		// $('body').on('click', '#photo-modal', () => this.changeOpenedImage('next', this));
 	},
 
 	onTouchStart(event) {
@@ -315,6 +316,11 @@ const carousel = {
 		});
 
 		$('#photo-img').attr('style', `background-image: url(${url})`);
+	},
+
+	changeOpenedImage(way) {
+		this.changeImage(way);
+		this.openImage(true);
 	},
 };
 
