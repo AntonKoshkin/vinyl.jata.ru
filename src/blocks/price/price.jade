@@ -5,9 +5,13 @@ mixin price__column(mod, items, name, num)
 		if mod !== 'white'
 			p.price__col-title
 				if mod === 'tall'
-					| KPMF, ORACAL, HEXIS (ПВХ пленки)
+					| KPMF, ORACAL, HEXIS (ПВХ&nbsp;пленки)
 				if mod === 'mid'
-					| HEXIS, 3M (полиуретановые пленки)
+					//- | HEXIS, 3M (полиуретановые пленки)
+					| HEXIS, 3M (полиуретан
+					span.price__desktop-hide .
+					span.price__desktop-show овые
+					|  пленки)
 				//- else
 					| Стоимость
 
@@ -40,4 +44,4 @@ mixin price(color, title, subtitle, items, colNum, tableName)
 				+price__column('white', items[0], tableName, 0)
 				+price__column('tall', items[1], tableName, 1)
 				if colNum > 2
-					+price__column('mid', items[1], tableName, 2)
+					+price__column('mid', items[2], tableName, 2)

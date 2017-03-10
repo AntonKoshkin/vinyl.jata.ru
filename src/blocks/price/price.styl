@@ -24,7 +24,10 @@ price-border-gray = #d
 		.price--red &
 			padding-top 40px
 			padding-bottom 40px
-	
+			
+			@media (min-width desktop)
+				padding-bottom 60px
+				
 	&__header
 		.price--red &
 			display flex
@@ -39,11 +42,23 @@ price-border-gray = #d
 		flex-direction column
 		line-height 1em
 		
+		@media (min-width desktop)
+			font-size (28rem / 16)
+		
 		.price--blue &
 			max-width 210px
+			
+			@media (min-width tablet)
+				max-width 360px
+			
+			@media (min-width desktop)
+				max-width none
 		
 		.price--red &
 			text-align center
+			
+			@media (min-width desktop)
+				margin-right 88px
 		
 	&__big
 		font-size (40rem /16)
@@ -51,9 +66,15 @@ price-border-gray = #d
 		text-transform uppercase
 		line-height 1em
 		
+		@media (min-width desktop)
+			font-size (60rem / 16)
+		
 		.price--blue &
 			color blue
 			margin-left 14px
+			
+			@media (min-width desktop)
+				margin-left 25px
 		
 		.price--red &
 			color price-title-red
@@ -66,17 +87,41 @@ price-border-gray = #d
 		position relative
 		
 		.price--blue &
-			top -30px
+			top -55px
+			justify-content space-between
+			
+			@media (min-width tablet)
+				top -40px
+			
+			@media (min-width desktop)
+				justify-content center
 	
 	&__column
 		box-shadow 0 0 10px rgba(black, .5)
+		flex-shrink 0
 		
 		&--white
-			margin-left 2px
-			padding 0px 21px 18px
-			margin-bottom 16px
+			padding 0px 12px 18px
+			margin-bottom 37px
 			background-color white
-			margin-right 8px
+			width 236px
+			
+			@media (min-width tablet)
+				width 380px
+				padding 16px 21px 25px
+				margin-bottom 18px
+			
+			@media (min-width desktop)
+				width 418px
+				margin-left 0
+				padding 10px 24px 27px 19px
+				margin-bottom 10px
+			
+			.price--red &
+				width 260px
+				
+				@media (min-width tablet)
+					width 400px
 		
 		&:not(&--white)
 			background-position top center
@@ -88,36 +133,117 @@ price-border-gray = #d
 		
 		&--tall
 			padding 7px
+			width 118px
+			
+			@media (min-width tablet)
+				width 168px
+			
+			@media (min-width desktop)
+				width 288px
+				margin-left 8px
+				margin-right 8px
+			
+			.price--red &
+				margin-left 4px
+				width 210px
+				
+				@media (min-width tablet)
+					width 240px
+					margin-left 8px
+				
+				@media (min-width desktop)
+					width 288px
 		
 		&--mid
 			padding 5px 7px 7px
-			margin-left 8px
+			margin-bottom 18px
+			width 117px
+			
+			@media (min-width tablet)
+				width 156px
+				margin-bottom 18px
+			
+			@media (min-width desktop)
+				width 288px
+				margin-bottom 10px
 	
 	&__col-title
 		font-weight 700
 		color white
 		text-shadow 2px 2px 0 rgba(black, .4)
 		text-align center
+		font-size (14rem / 16)
+		margin 0 -1px
 		
+		@media (min-width tablet)
+			margin 0
+
 		.price__column--tall &
-			font-size (18rem / 16)
 			padding-top 2px
 			padding-bottom 8px
+			
+			@media (min-width tablet)
+				font-size 1rem
+				padding-top 10px
+				padding-bottom 16px
+			
+			@media (min-width desktop)
+				font-size (22rem / 16)
+				padding-top 8px
+				padding-bottom 10px
 		
 		.price__column--mid &
 			padding-bottom 4px
+			
+			@media (min-width tablet)
+				padding-top 4px
+				padding-bottom 5px
+			
+			@media (min-width desktop)
+				font-size (20rem / 16)
+				padding-top 3px
+				padding-bottom 10px
+	
+	&__desktop-show
+		display none
+		
+		@media (min-width desktop)
+			display inline
+	
+	&__desktop-hide
+		@media (min-width desktop)
+			display none
 
 	&__items
 		list-style-type none
+		padding-top 2px
 		
 		.price__column--tall &
+			background-color white
+			padding 2px 15px 48px
+			
+			@media (min-width tablet)
+				padding-bottom 37px
+			
+			@media (min-width desktop)
+				padding 6px 17px 30px 27px
+
 		.price__column--mid &
 			background-color white
-			padding 0 15px 27px
+			padding 2px 15px 30px
+			
+			@media (min-width tablet)
+				padding 0 15px 19px
+			
+			@media (min-width desktop)
+				padding 4px 22px 20px
 		
 	&__item
 		display flex
-		align-items center
+		align-items stretch
+		
+		@media (min-width tablet)
+			min-height 43px
 
 		.price__column--white &:before
 			@extend $pseudo
@@ -126,116 +252,39 @@ price-border-gray = #d
 			border-radius 50%
 			background-color blue
 			margin-right 9px
+			flex-shrink 0
+			align-self center
+			
+		.price--red &:last-child
+			min-height 60px
 	
 	&__text
 		color price-item-gray
 		font-weight 500
 		font-size (14rem / 16)
 		border-bottom 2px dotted price-border-gray
-		padding 12px 0
+		padding 11px 0
+		flex-grow 1
+		display flex
+		justify-content center
+		align-items center
+		
+		@media (min-width tablet)
+			font-size 1rem
 		
 		.price__column--white &
-			min-width 137px
+			border-bottom-style solid
+			text-align left
+			justify-content flex-start
+			font-size (14rem / 16)
+			//	min-width 137px
+			
+			@media (min-width tablet)
+				border-bottom-style dotted
 		
-		.price__column--tall &
 		.price__column--mid &
-			min-width 92px
-			text-align center
-	
-	@media (min-width tablet)
-		&__column
-			&--white
-				padding 6px 21px 18px
-
-			&--mid
-				margin-bottom 9px
-
-		&__col-title
-			.price__column--tall &
-				font-size (26rem / 16)
-				padding-top 10px
-				padding-bottom 16px
+			@media (min-width tablet)
+				border-bottom-style solid
 			
-			.price__column--mid &
-				font-size (20rem / 16)
-				padding-top 4px
-				padding-bottom 5px
-		
-		&__items
-			.price__column--mid &
-				padding 0 15px 19px
-
-		&__text
-			font-size 1rem
-
-			.price__column--white &
-				min-width 176px
-			
-			.price__column--tall &
-				min-width 192px
-			
-			.price__column--mid &
-				min-width 194px
-	
-	@media (min-width desktop)
-		&__content
-			.price--red &
-				padding-bottom 60px
-
-		&__title
-			font-size (28rem / 16)
-
-			.price--blue &
-				max-width none
-
-			.price--red &
-				margin-right 88px
-
-		&__body
-			justify-content center
-			
-			.price--blue &
-				top -40px
-		
-		&__column
-			&--white
-				margin-left 0
-				padding 10px 24px 27px 19px
-				margin-bottom 10px
-			
-			// &--tall
-			// 	margin-left 8px
-			// 	margin-right 8px
-			
-			&--mid
-				margin-bottom 10px
-		
-		&__items
-			.price__column--tall &
-				padding 6px 17px 30px 27px
-			
-			.price__column--mid &
-				padding 4px 22px 20px
-		
-		&__big
-			font-size (60rem / 16)
-			
-			.price--blue &
-				margin-left 25px
-		
-		&__col-title
-			.price__column--tall
-				font-size (30rem / 16)
-				padding-top 16px
-				padding-bottom 23px
-			
-			.price__column--mid
-				font-size (24rem / 16)
-				padding-top 11px
-				padding-bottom 12px
-		
-		&__text
-			.price__column--white &
-			.price__column--tall &
-			.price__column--mid &
-				min-width 230px
+			@media (min-width desktop)
+				border-bottom-style dotted
