@@ -20,7 +20,7 @@ mixin price__column(mod, items, name, num)
 				{% if tables.#{name}.#{num} %}
 					{% for cell in tables.#{name}.#{num}.cells %}
 						<li class="price__item">
-							<span class="price__text">
+							<span class="price__text" title="{{ cell.value }}">
 								{{ cell.value }}
 							</span>
 						</li>
@@ -30,7 +30,7 @@ mixin price__column(mod, items, name, num)
 			ul.price__items
 				for item in items
 					li.price__item
-						span.price__text=item
+						span.price__text(title=item)=item
 
 mixin price(color, title, subtitle, items, colNum, tableName)
 	.price(class='price--' + color)

@@ -643,30 +643,27 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
   position: relative;
 }
+@media (min-width: 1180px) {
+  .price__body {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
 .price--blue .price__body {
   top: -55px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 @media (min-width: 760px) {
   .price--blue .price__body {
     top: -40px;
-  }
-}
-@media (min-width: 1180px) {
-  .price--blue .price__body {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
   }
 }
 .price__column {
@@ -695,14 +692,6 @@ body {
     margin-bottom: 10px;
   }
 }
-.price--red .price__column--white {
-  width: 260px;
-}
-@media (min-width: 760px) {
-  .price--red .price__column--white {
-    width: 400px;
-  }
-}
 .price__column:not(.price__column--white) {
   background-position: top center;
   background-size: cover;
@@ -725,21 +714,6 @@ body {
     width: 288px;
     margin-left: 8px;
     margin-right: 8px;
-  }
-}
-.price--red .price__column--tall {
-  margin-left: 4px;
-  width: 210px;
-}
-@media (min-width: 760px) {
-  .price--red .price__column--tall {
-    width: 240px;
-    margin-left: 8px;
-  }
-}
-@media (min-width: 1180px) {
-  .price--red .price__column--tall {
-    width: 288px;
   }
 }
 .price__column--mid {
@@ -876,9 +850,6 @@ body {
       -ms-grid-row-align: center;
       align-self: center;
 }
-.price--red .price__item:last-child {
-  min-height: 60px;
-}
 .price__text {
   color: #272727;
   font-weight: 500;
@@ -888,15 +859,11 @@ body {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: block;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 @media (min-width: 760px) {
   .price__text {
@@ -3005,3 +2972,5 @@ body {
     margin-bottom: -35px;
   }
 }
+
+/*# sourceMappingURL=style.css.map */

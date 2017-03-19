@@ -81,20 +81,23 @@ price-border-gray = #d
 	
 	&__body
 		display flex
-		// justify-content space-between
-		justify-content center
+		justify-content space-between
+		// justify-content center
 		align-items flex-end
 		position relative
 		
+		@media (min-width desktop)
+			justify-content center
+		
 		.price--blue &
 			top -55px
-			justify-content space-between
+			// justify-content space-between
 			
 			@media (min-width tablet)
 				top -40px
 			
-			@media (min-width desktop)
-				justify-content center
+			// @media (min-width desktop)
+			// 	justify-content center
 	
 	&__column
 		box-shadow 0 0 10px rgba(black, .5)
@@ -117,11 +120,11 @@ price-border-gray = #d
 				padding 10px 24px 27px 19px
 				margin-bottom 10px
 			
-			.price--red &
-				width 260px
+			// .price--red &
+			// 	width 260px
 				
-				@media (min-width tablet)
-					width 400px
+			// 	@media (min-width tablet)
+			// 		width 400px
 		
 		&:not(&--white)
 			background-position top center
@@ -143,16 +146,16 @@ price-border-gray = #d
 				margin-left 8px
 				margin-right 8px
 			
-			.price--red &
-				margin-left 4px
-				width 210px
+			// .price--red &
+			// 	margin-left 4px
+			// 	width 210px
 				
-				@media (min-width tablet)
-					width 240px
-					margin-left 8px
+			// 	@media (min-width tablet)
+			// 		width 240px
+			// 		margin-left 8px
 				
-				@media (min-width desktop)
-					width 288px
+			// 	@media (min-width desktop)
+			// 		width 288px
 		
 		&--mid
 			padding 5px 7px 7px
@@ -255,8 +258,8 @@ price-border-gray = #d
 			flex-shrink 0
 			align-self center
 			
-		.price--red &:last-child
-			min-height 60px
+		// .price--red &:last-child
+		// 	min-height 60px
 	
 	&__text
 		color price-item-gray
@@ -265,9 +268,14 @@ price-border-gray = #d
 		border-bottom 2px dotted price-border-gray
 		padding 11px 0
 		flex-grow 1
-		display flex
-		justify-content center
-		align-items center
+		// display flex
+		// justify-content center
+		// align-items center
+		display block
+		text-align center
+		overflow hidden
+		text-overflow ellipsis
+		white-space nowrap
 		
 		@media (min-width tablet)
 			font-size 1rem
