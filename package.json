@@ -5,10 +5,9 @@
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "preinstall": "npm i -g cross-env",
-    "server": "cross-env NODE_ENV=development gulp server",
-    "start": "cross-env NODE_ENV=development gulp",
-    "build": "cross-env NODE_ENV=production gulp"
+    "server": "NODE_ENV=development gulp server",
+    "start": "NODE_ENV=development gulp",
+    "build": "NODE_ENV=production gulp"
   },
   "repository": {
     "type": "git",
