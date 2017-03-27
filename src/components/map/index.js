@@ -1,14 +1,19 @@
 /* global ymaps */
 
+const mapCenterAndPin = [59.91567956, 30.37416850];
+const addressName = 'Атаманская ул., 6В';
+
 exports.map = {
 	map  : null,
 	marks: [],
 
 	marksParams: [
 		{
-			coords: [59.92010856, 30.37295600],
+			// coords: [59.92010856, 30.37295600],
+			// title : 'СПб, Кременчугская ул., д.8',
+			coords: mapCenterAndPin,
+			title : addressName,
 			name  : 'Бокс для оклейки',
-			title : 'СПб, Кременчугская ул., д.8',
 			il    : 'default#image',
 			iih   : '/static/img/map__pin.svg',
 			iis   : [36, 48],
@@ -28,7 +33,8 @@ exports.map = {
 			this.map = new ymaps.Map(
 				'map',
 				{
-					center  : [59.92010856, 30.37295600],
+					// center  : [59.92010856, 30.37295600],
+					center  : mapCenterAndPin,
 					controls: ['zoomControl'],
 					zoom    : 15,
 				},
