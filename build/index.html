@@ -5,7 +5,38 @@
 		<meta name="viewport" content="width=device-width"/>
 		<link rel="icon" type="image/png" sizes="200x200" href="static/img/fav.png"/>
 		<meta name="format-detection" content="telephone=no"/>
-		<link rel="stylesheet" href="/static/css/style.css"/>
+		<link rel="stylesheet" href="/static/css/style-b1fa95ca31.css"/>
+		<!-- Yandex.Metrika counter-->
+		<script>
+			(function (d, w, c) {
+				(w[c] = w[c] || []).push(function() {
+					try {
+						w.yaCounter42835074 = new Ya.Metrika({
+							id:42835074,
+							clickmap:true,
+							trackLinks:true,
+							accurateTrackBounce:true,
+							webvisor:true
+						});
+					} catch(e) {}
+				});
+			
+				var n = d.getElementsByTagName('script')[0],
+				s = d.createElement('script'),
+				f = function () { n.parentNode.insertBefore(s, n); };
+				s.type = 'text/javascript';
+				s.async = true;
+				s.src = 'https://mc.yandex.ru/metrika/watch.js';
+			
+				if (w.opera == '[object Opera]') {
+					d.addEventListener('DOMContentLoaded', f, false);
+				} else {f();}
+			})(document, window, 'yandex_metrika_callbacks');
+		</script>
+		<noscript>
+			<div><img src="https://mc.yandex.ru/watch/42835074" style="position:absolute; left:-9999px;" alt=""/></div>
+		</noscript>
+		<!-- Yandex.Metrika counter-->
 	</head>
 	<body class="vynil no-scroll no-vis">
 		<header class="header">
@@ -27,10 +58,10 @@
 							<li class="nav__item"><a href="#gallery" class="nav__link">Галерея</a></li>
 							<li class="nav__item"><a href="#map" class="nav__link">Контакты</a></li>
 						</ul>
-					</nav><a href="tel:+78122741338" class="phone">
+					</nav><a href="tel:{{ info.phone_link }}" class="phone">
 								<svg data-name="red-phone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.5 15.5" class="phone__icon">
 									<path d="M4.65,0H4.36a4.29,4.29,0,0,0-3,1.26h0A4.53,4.53,0,0,0,0,4.46H0A4.53,4.53,0,0,0,.62,6.74a22.62,22.62,0,0,0,8.14,8.14,4.53,4.53,0,0,0,5.48-.71h0a4.29,4.29,0,0,0,1.26-3V10.85L11.37,9.3,9.82,10.85A18.63,18.63,0,0,1,4.65,5.68L6.2,4.13Z" class="phone__path"></path>
-								</svg><span class="phone__text">8 (812) 274 13 38</span></a>
+								</svg><span class="phone__text">{{ info.phone }}</span></a>
 					<button id="burger" type="button" class="burger"><span class="burger__strip"></span></button>
 				</div>
 			</div>
@@ -56,7 +87,7 @@
 											<path d="M6.14,0A6.22,6.22,0,0,0,0,6.31,8,8,0,0,0,.49,8.84L6.14,21.2,11.79,8.84a8,8,0,0,0,.49-2.53A6.22,6.22,0,0,0,6.14,0m0,3.91A2.23,2.23,0,1,1,3.91,6.14,2.23,2.23,0,0,1,6.14,3.91" transform="translate(3 2.8)"></path>
 										</g>
 									</svg>
-									<p class="tenon__text">Атаманская ул., 6В</p>
+									<p class="tenon__text">{{ info.address }}</p>
 								</div>
 							</div>
 				<div class="promo__content">
@@ -201,14 +232,15 @@
 									<div class="section__content">
 										<h3 class="section__foot-title">Стоимость</h3>
 										<div class="section__prices">
-											<p class="section__price">Авто 1 класса<br/>от <b>6 000</b> руб.
-											</p>
-											<p class="section__price">Авто бизнес-класса<br/>от <b>26 000</b> руб.
-											</p>
-											<p class="section__price">Авто 1 класса<br/>от <b>6 000</b> руб.
-											</p>
-											<p class="section__price">Авто бизнес-класса<br/>от <b>26 000</b> руб.
-											</p>
+											{% if antigrav %}
+												{% for price in antigrav %}
+													<p class="section__price">
+														{{ price.category.name }}
+														<br/>
+														от <b>{{ price.value }}</b> руб.
+													</p>
+												{% endfor %}
+											{% endif %}
 										</div>
 									</div>
 								</div>
@@ -257,14 +289,15 @@
 									<div class="section__content">
 										<h3 class="section__foot-title">Стоимость</h3>
 										<div class="section__prices">
-											<p class="section__price">Авто 1 класса<br/>от <b>6 000</b> руб.
-											</p>
-											<p class="section__price">Авто бизнес-класса<br/>от <b>26 000</b> руб.
-											</p>
-											<p class="section__price">Авто 1 класса<br/>от <b>6 000</b> руб.
-											</p>
-											<p class="section__price">Авто бизнес-класса<br/>от <b>26 000</b> руб.
-											</p>
+											{% if branding %}
+												{% for price in branding %}
+													<p class="section__price">
+														{{ price.category.name }}
+														<br/>
+														от <b>{{ price.value }}</b> руб.
+													</p>
+												{% endfor %}
+											{% endif %}
 										</div>
 									</div>
 								</div>
@@ -311,14 +344,15 @@
 									<div class="section__content">
 										<h3 class="section__foot-title">Стоимость</h3>
 										<div class="section__prices">
-											<p class="section__price">Авто 1 класса<br/>от <b>6 000</b> руб.
-											</p>
-											<p class="section__price">Авто бизнес-класса<br/>от <b>26 000</b> руб.
-											</p>
-											<p class="section__price">Авто 1 класса<br/>от <b>6 000</b> руб.
-											</p>
-											<p class="section__price">Авто бизнес-класса<br/>от <b>26 000</b> руб.
-											</p>
+											{% if full %}
+												{% for price in full %}
+													<p class="section__price">
+														{{ price.category.name }}
+														<br/>
+														от <b>{{ price.value }}</b> руб.
+													</p>
+												{% endfor %}
+											{% endif %}
 										</div>
 									</div>
 								</div>
@@ -367,14 +401,15 @@
 									<div class="section__content">
 										<h3 class="section__foot-title">Стоимость</h3>
 										<div class="section__prices">
-											<p class="section__price">Авто 1 класса<br/>от <b>6 000</b> руб.
-											</p>
-											<p class="section__price">Авто бизнес-класса<br/>от <b>26 000</b> руб.
-											</p>
-											<p class="section__price">Авто 1 класса<br/>от <b>6 000</b> руб.
-											</p>
-											<p class="section__price">Авто бизнес-класса<br/>от <b>26 000</b> руб.
-											</p>
+											{% if vinyl %}
+												{% for price in vinyl %}
+													<p class="section__price">
+														{{ price.category.name }}
+														<br/>
+														от <b>{{ price.value }}</b> руб.
+													</p>
+												{% endfor %}
+											{% endif %}
 										</div>
 									</div>
 								</div>
@@ -423,14 +458,15 @@
 									<div class="section__content">
 										<h3 class="section__foot-title">Стоимость</h3>
 										<div class="section__prices">
-											<p class="section__price">Авто 1 класса<br/>от <b>6 000</b> руб.
-											</p>
-											<p class="section__price">Авто бизнес-класса<br/>от <b>26 000</b> руб.
-											</p>
-											<p class="section__price">Авто 1 класса<br/>от <b>6 000</b> руб.
-											</p>
-											<p class="section__price">Авто бизнес-класса<br/>от <b>26 000</b> руб.
-											</p>
+											{% if part %}
+												{% for price in part %}
+													<p class="section__price">
+														{{ price.category.name }}
+														<br/>
+														от <b>{{ price.value }}</b> руб.
+													</p>
+												{% endfor %}
+											{% endif %}
 										</div>
 									</div>
 								</div>
@@ -445,66 +481,45 @@
 									<div class="price__body">
 													<div class="price__column price__column--white">
 														<ul class="price__items">
-															<li class="price__item"><span title="Капот" class="price__text">Капот</span></li>
-															<li class="price__item"><span title="Полоса на капот" class="price__text">Полоса на капот</span></li>
-															<li class="price__item"><span title="Бампер (перед зад)" class="price__text">Бампер (перед зад)</span></li>
-															<li class="price__item"><span title="Накладка на задний бампер" class="price__text">Накладка на задний бампер</span></li>
-															<li class="price__item"><span title="Крыша" class="price__text">Крыша</span></li>
-															<li class="price__item"><span title="Полоска на крышу" class="price__text">Полоска на крышу</span></li>
-															<li class="price__item"><span title="Крыло переднее" class="price__text">Крыло переднее</span></li>
-															<li class="price__item"><span title="Крыло заднее (без стойки)" class="price__text">Крыло заднее (без стойки)</span></li>
-															<li class="price__item"><span title="Крыло заднее со стойкой" class="price__text">Крыло заднее со стойкой</span></li>
-															<li class="price__item"><span title="Дверь" class="price__text">Дверь</span></li>
-															<li class="price__item"><span title="Задняя дверь (багажник)" class="price__text">Задняя дверь (багажник)</span></li>
-															<li class="price__item"><span title="Накладка на порог 4 шт." class="price__text">Накладка на порог 4 шт.</span></li>
-															<li class="price__item"><span title="Порог внешний" class="price__text">Порог внешний</span></li>
-															<li class="price__item"><span title="Зеркало заднего вида 1 шт." class="price__text">Зеркало заднего вида 1 шт.</span></li>
-															<li class="price__item"><span title="Фара 1 шт." class="price__text">Фара 1 шт.</span></li>
-															<li class="price__item"><span title="Вставка под ручку двери" class="price__text">Вставка под ручку двери</span></li>
+															{% if tables.price.0 %}
+																{% for cell in tables.price.0.cells %}
+																	<li class="price__item">
+																		<span class="price__text" title="{{ cell.value }}">
+																			{{ cell.value }}
+																		</span>
+																	</li>
+																{% endfor %}
+															{% endif %}
 														</ul>
 													</div>
 													<div class="price__column price__column--tall">
 														<p class="price__col-title">KPMF, ORACAL, HEXIS (ПВХ&nbsp;пленки)
 														</p>
 														<ul class="price__items">
-															<li class="price__item"><span title="от 9000" class="price__text">от 9000</span></li>
-															<li class="price__item"><span title="от 2500" class="price__text">от 2500</span></li>
-															<li class="price__item"><span title="от 9000" class="price__text">от 9000</span></li>
-															<li class="price__item"><span title="от 2500" class="price__text">от 2500</span></li>
-															<li class="price__item"><span title="от 9000" class="price__text">от 9000</span></li>
-															<li class="price__item"><span title="от 2500" class="price__text">от 2500</span></li>
-															<li class="price__item"><span title="3500" class="price__text">3500</span></li>
-															<li class="price__item"><span title="от 5000" class="price__text">от 5000</span></li>
-															<li class="price__item"><span title="от 15000" class="price__text">от 15000</span></li>
-															<li class="price__item"><span title="от 5000" class="price__text">от 5000</span></li>
-															<li class="price__item"><span title="от 6000" class="price__text">от 6000</span></li>
-															<li class="price__item"><span title="от 3500" class="price__text">от 3500</span></li>
-															<li class="price__item"><span title="от 7000" class="price__text">от 7000</span></li>
-															<li class="price__item"><span title="от 2000" class="price__text">от 2000</span></li>
-															<li class="price__item"><span title="от 1500" class="price__text">от 1500</span></li>
-															<li class="price__item"><span title="от 2000" class="price__text">от 2000</span></li>
+															{% if tables.price.1 %}
+																{% for cell in tables.price.1.cells %}
+																	<li class="price__item">
+																		<span class="price__text" title="{{ cell.value }}">
+																			{{ cell.value }}
+																		</span>
+																	</li>
+																{% endfor %}
+															{% endif %}
 														</ul>
 													</div>
 													<div class="price__column price__column--mid">
 														<p class="price__col-title">HEXIS, 3M (полиуретан<span class="price__desktop-hide">.</span><span class="price__desktop-show">овые</span> пленки)
 														</p>
 														<ul class="price__items">
-															<li class="price__item"><span title="от 3000" class="price__text">от 3000</span></li>
-															<li class="price__item"><span title="от 500" class="price__text">от 500</span></li>
-															<li class="price__item"><span title="от 4000" class="price__text">от 4000</span></li>
-															<li class="price__item"><span title="от 500" class="price__text">от 500</span></li>
-															<li class="price__item"><span title="4000" class="price__text">4000</span></li>
-															<li class="price__item"><span title="от 500" class="price__text">от 500</span></li>
-															<li class="price__item"><span title="от 2000" class="price__text">от 2000</span></li>
-															<li class="price__item"><span title="от 2000" class="price__text">от 2000</span></li>
-															<li class="price__item"><span title="от 4000" class="price__text">от 4000</span></li>
-															<li class="price__item"><span title="от 2000" class="price__text">от 2000</span></li>
-															<li class="price__item"><span title="от 3000" class="price__text">от 3000</span></li>
-															<li class="price__item"><span title="от 1000" class="price__text">от 1000</span></li>
-															<li class="price__item"><span title="от 4000" class="price__text">от 4000</span></li>
-															<li class="price__item"><span title="от 1500" class="price__text">от 1500</span></li>
-															<li class="price__item"><span title="от 500" class="price__text">от 500</span></li>
-															<li class="price__item"><span title="от 500" class="price__text">от 500</span></li>
+															{% if tables.price.2 %}
+																{% for cell in tables.price.2.cells %}
+																	<li class="price__item">
+																		<span class="price__text" title="{{ cell.value }}">
+																			{{ cell.value }}
+																		</span>
+																	</li>
+																{% endfor %}
+															{% endif %}
 														</ul>
 													</div>
 									</div>
@@ -518,51 +533,45 @@
 									<div class="price__body">
 													<div class="price__column price__column--white">
 														<ul class="price__items">
-															<li class="price__item"><span title="Малый класс" class="price__text">Малый класс</span></li>
-															<li class="price__item"><span title="Средний" class="price__text">Средний</span></li>
-															<li class="price__item"><span title="Бизнес" class="price__text">Бизнес</span></li>
-															<li class="price__item"><span title="Универсал" class="price__text">Универсал</span></li>
-															<li class="price__item"><span title="Кроссовер" class="price__text">Кроссовер</span></li>
-															<li class="price__item"><span title="Внедорожник" class="price__text">Внедорожник</span></li>
-															<li class="price__item"><span title="Микроавтобус/минивен" class="price__text">Микроавтобус/минивен</span></li>
-															<li class="price__item"><span title="Представительский" class="price__text">Представительский</span></li>
-															<li class="price__item"><span title="V.I.P." class="price__text">V.I.P.</span></li>
-															<li class="price__item"><span title="Эксклюзив" class="price__text">Эксклюзив</span></li>
-															<li class="price__item"><span title="Мототехника (мотоцикл/скутер/гидроцикл/квадроцикл)" class="price__text">Мототехника (мотоцикл/скутер/гидроцикл/квадроцикл)</span></li>
+															{% if tables.branding.0 %}
+																{% for cell in tables.branding.0.cells %}
+																	<li class="price__item">
+																		<span class="price__text" title="{{ cell.value }}">
+																			{{ cell.value }}
+																		</span>
+																	</li>
+																{% endfor %}
+															{% endif %}
 														</ul>
 													</div>
 													<div class="price__column price__column--tall">
 														<p class="price__col-title">KPMF, ORACAL, HEXIS (ПВХ&nbsp;пленки)
 														</p>
 														<ul class="price__items">
-															<li class="price__item"><span title="30000" class="price__text">30000</span></li>
-															<li class="price__item"><span title="35000" class="price__text">35000</span></li>
-															<li class="price__item"><span title="37000" class="price__text">37000</span></li>
-															<li class="price__item"><span title="37000" class="price__text">37000</span></li>
-															<li class="price__item"><span title="40000" class="price__text">40000</span></li>
-															<li class="price__item"><span title="50000" class="price__text">50000</span></li>
-															<li class="price__item"><span title="50000" class="price__text">50000</span></li>
-															<li class="price__item"><span title="55000" class="price__text">55000</span></li>
-															<li class="price__item"><span title="65000" class="price__text">65000</span></li>
-															<li class="price__item"><span title="Индивидуальный расчет" class="price__text">Индивидуальный расчет</span></li>
-															<li class="price__item"><span title="Индивидуальный расчет" class="price__text">Индивидуальный расчет</span></li>
+															{% if tables.branding.1 %}
+																{% for cell in tables.branding.1.cells %}
+																	<li class="price__item">
+																		<span class="price__text" title="{{ cell.value }}">
+																			{{ cell.value }}
+																		</span>
+																	</li>
+																{% endfor %}
+															{% endif %}
 														</ul>
 													</div>
 													<div class="price__column price__column--mid">
 														<p class="price__col-title">HEXIS, 3M (полиуретан<span class="price__desktop-hide">.</span><span class="price__desktop-show">овые</span> пленки)
 														</p>
 														<ul class="price__items">
-															<li class="price__item"><span title="30000" class="price__text">30000</span></li>
-															<li class="price__item"><span title="Индивидуальный расчет" class="price__text">Индивидуальный расчет</span></li>
-															<li class="price__item"><span title="Индивидуальный расчет" class="price__text">Индивидуальный расчет</span></li>
-															<li class="price__item"><span title="Индивидуальный расчет" class="price__text">Индивидуальный расчет</span></li>
-															<li class="price__item"><span title="Индивидуальный расчет" class="price__text">Индивидуальный расчет</span></li>
-															<li class="price__item"><span title="Индивидуальный расчет" class="price__text">Индивидуальный расчет</span></li>
-															<li class="price__item"><span title="Индивидуальный расчет" class="price__text">Индивидуальный расчет</span></li>
-															<li class="price__item"><span title="Индивидуальный расчет" class="price__text">Индивидуальный расчет</span></li>
-															<li class="price__item"><span title="Индивидуальный расчет" class="price__text">Индивидуальный расчет</span></li>
-															<li class="price__item"><span title="Индивидуальный расчет" class="price__text">Индивидуальный расчет</span></li>
-															<li class="price__item"><span title="Индивидуальный расчет" class="price__text">Индивидуальный расчет</span></li>
+															{% if tables.branding.2 %}
+																{% for cell in tables.branding.2.cells %}
+																	<li class="price__item">
+																		<span class="price__text" title="{{ cell.value }}">
+																			{{ cell.value }}
+																		</span>
+																	</li>
+																{% endfor %}
+															{% endif %}
 														</ul>
 													</div>
 									</div>
@@ -651,13 +660,13 @@
 								<path d="M6.14,0A6.22,6.22,0,0,0,0,6.31,8,8,0,0,0,.49,8.84L6.14,21.2,11.79,8.84a8,8,0,0,0,.49-2.53A6.22,6.22,0,0,0,6.14,0m0,3.91A2.23,2.23,0,1,1,3.91,6.14,2.23,2.23,0,0,1,6.14,3.91" transform="translate(3 2.8)" style="fill:#00a3af"></path>
 							</g>
 						</svg>
-						<p class="footer__text">Атаманская ул., 6В</p>
+						<p class="footer__text">{{ info.address }}</p>
 					</div>
 				</div>
-				<div class="footer__right"><a href="tel:+78122741338" class="phone">
+				<div class="footer__right"><a href="tel:{{ info.phone_link }}" class="phone">
 								<svg data-name="red-phone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.5 15.5" class="phone__icon">
 									<path d="M4.65,0H4.36a4.29,4.29,0,0,0-3,1.26h0A4.53,4.53,0,0,0,0,4.46H0A4.53,4.53,0,0,0,.62,6.74a22.62,22.62,0,0,0,8.14,8.14,4.53,4.53,0,0,0,5.48-.71h0a4.29,4.29,0,0,0,1.26-3V10.85L11.37,9.3,9.82,10.85A18.63,18.63,0,0,1,4.65,5.68L6.2,4.13Z" class="phone__path"></path>
-								</svg><span class="phone__text">8 (812) 274 13 38</span></a>
+								</svg><span class="phone__text">{{ info.phone }}</span></a>
 				</div>
 			</div>
 		</footer>
@@ -787,7 +796,7 @@
 			
 		</script>
 		<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
-		<script src="/static/js/main.js"></script>
+		<script src="/static/js/main-07cbd32244.js"></script>
 		<script src="/static/js/loader.js"></script>
 	</body>
 </html>
